@@ -47,16 +47,15 @@ import FooterNav from "components/FooterNav";
 import useWindowSize from "hooks/useWindowResize";
 import PageHome3 from "containers/PageHome/PageHome3";
 import AdminDashboard from "containers/AdminDashboard/AdminDashboard";
-import Header from 'components/Header/Header'
 
 
 
 export const pages: Page[] = [
-  { path: "/", exact: true, component: PageHome2 },
-  { path: "/#", exact: true, component: PageHome2 },
-  // { path: "/home-1-header-2", exact: true, component: PageHome },
-  // { path: "/home-2", component: PageHome2 },
-  // { path: "/home-3", component: PageHome3 },
+  { path: "/", exact: true, component: PageHome },
+  { path: "/#", exact: true, component: PageHome },
+  { path: "/home-1-header-2", exact: true, component: PageHome },
+  { path: "/home-2", component: PageHome2 },
+  { path: "/home-3", component: PageHome3 },
   //
   { path: "/listing-stay", component: ListingStayPage },
   { path: "/listing-stay-map", component: ListingStayMapPage },
@@ -121,7 +120,7 @@ const MyRoutes = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Header />
+      <SiteHeader />
 
       <Routes>
         {pages.map(({ component, path }) => {

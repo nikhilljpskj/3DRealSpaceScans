@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import NcImage from "shared/NcImage/NcImage";
 import { TaxonomyType } from "data/types";
 import { Link } from "react-router-dom";
-import convertNumbThousand from "utils/convertNumbThousand";
 
 export interface CardCategory4Props {
   className?: string;
@@ -13,7 +12,7 @@ const CardCategory4: FC<CardCategory4Props> = ({
   className = "",
   taxonomy,
 }) => {
-  const { count, name, href = "/", thumbnail, listingType } = taxonomy;
+  const { count, name, href = "/", thumbnail, listingType, desc } = taxonomy;
   return (
     <Link
       to={href}
@@ -29,7 +28,7 @@ const CardCategory4: FC<CardCategory4Props> = ({
         />
         <span className="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
       </div>
-      <div className="mt-4 px-2 truncate text-center">
+      <div className="mt-4 px-2 text-center">
         <h2
           className={`text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate`}
         >
@@ -38,11 +37,7 @@ const CardCategory4: FC<CardCategory4Props> = ({
         <span
           className={`block mt-2 text-sm text-neutral-6000 dark:text-neutral-400`}
         >
-          {convertNumbThousand(count || 0)}
-          {` `}
-          {(!listingType || listingType === "stay") && "properties"}
-          {listingType === "car" && "cars"}
-          {listingType === "experiences" && "experiences"}
+          {desc}
         </span>
       </div>
     </Link>

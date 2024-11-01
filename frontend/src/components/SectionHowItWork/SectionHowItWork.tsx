@@ -18,24 +18,7 @@ export interface SectionHowItWorkProps {
 }
 
 const DEMO_DATA: SectionHowItWorkProps["data"] = [
-  {
-    id: 1,
-    img: HIW1img,
-    title: "Book & relax",
-    desc: "Let each trip be an inspirational journey, each room a peaceful space",
-  },
-  {
-    id: 2,
-    img: HIW2img,
-    title: "Smart checklist",
-    desc: "Let each trip be an inspirational journey, each room a peaceful space",
-  },
-  {
-    id: 3,
-    img: HIW3img,
-    title: "Save more",
-    desc: "Let each trip be an inspirational journey, each room a peaceful space",
-  },
+
 ];
 
 const SectionHowItWork: FC<SectionHowItWorkProps> = ({
@@ -47,8 +30,8 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
       className={`nc-SectionHowItWork  ${className}`}
       data-nc-id="SectionHowItWork"
     >
-      <Heading isCenter desc="Keep calm & travel on">
-        How it work
+      <Heading isCenter desc="Here's how our simple service booking process work">
+        Get Started With Us
       </Heading>
       <div className="mt-20 relative grid md:grid-cols-3 gap-20">
         <img

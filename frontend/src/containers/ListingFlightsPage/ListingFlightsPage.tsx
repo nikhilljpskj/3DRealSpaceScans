@@ -95,14 +95,14 @@ const ListingFlightsPage: FC<ListingFlightsPageProps> = ({
         <SectionGridFilterCard className="pb-24 lg:pb-28" />
 
         {/* SECTION 1 */}
-        <SectionSliderNewCategories
+        {/* <SectionSliderNewCategories
           heading="Explore top destination ✈"
           subHeading="Explore thousands of destinations around the world"
           categoryCardType="card4"
           itemPerRow={4}
           categories={DEMO_CATS}
           uniqueClassName="ListingFlightsPage-section1"
-        />
+        /> */}
 
         {/* SECTION */}
         <SectionSubscribe2 className="py-24 lg:py-28" />

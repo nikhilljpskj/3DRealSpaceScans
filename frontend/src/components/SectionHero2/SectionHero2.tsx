@@ -27,15 +27,15 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "", children }) => {
             {children ? (
               children
             ) : (
-              <h2 className="font-semibold text-4xl md:text-5xl xl:text-7xl !leading-[110%]">
-                Find Your Best <br /> Smart Real Estate
+              <h2 className="font-semibold text-4xl md:text-5xl xl:text-6xl !leading-[110%]">
+                Visualize with Precision,<br /> Build with Confidence
               </h2>
             )}
           </div>
         </div>
-        <div className="hidden lg:block lg:mt-20 w-full">
+        {/* <div className="hidden lg:block lg:mt-20 w-full">
           <HeroRealEstateSearchForm />
-        </div>
+        </div> */}
       </div>
     </div>
   );

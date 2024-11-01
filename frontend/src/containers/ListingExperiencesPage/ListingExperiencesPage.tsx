@@ -98,7 +98,7 @@ const ListingExperiencesPage: FC<ListingExperiencesPageProps> = ({
         {/* SECTION 1 */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionSliderNewCategories
+          {/* <SectionSliderNewCategories
             heading="Explore top destination ✈"
             subHeading="Explore thousands of destinations around the world"
             categoryCardType="card4"
@@ -106,7 +106,7 @@ const ListingExperiencesPage: FC<ListingExperiencesPageProps> = ({
             categories={DEMO_CATS}
             sliderStyle="style2"
             uniqueClassName="ListingExperiencesPage"
-          />
+          /> */}
         </div>
 
         {/* SECTION */}

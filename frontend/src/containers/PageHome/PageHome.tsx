@@ -148,7 +148,7 @@ function PageHome() {
         <SectionHowItWork />
 
         {/* SECTION 1 */}
-        <div className="relative py-16">
+        {/* <div className="relative py-16">
           <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
           <SectionSliderNewCategories
             categories={DEMO_CATS_2}
@@ -159,7 +159,7 @@ function PageHome() {
             sliderStyle="style2"
             uniqueClassName="PageHome_s2"
           />
-        </div>
+        </div> */}
 
         {/* SECTION */}
         <SectionSubscribe2 />
