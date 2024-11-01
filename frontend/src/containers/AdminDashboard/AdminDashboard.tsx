@@ -1,3 +1,4 @@
+// AdminDashboard.tsx
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -7,34 +8,23 @@ const AdminDashboard = () => {
   useEffect(() => {
     const token = localStorage.getItem("jwtToken");
     if (!token) {
-      navigate("/login"); // Redirect to login if token is not present
+      navigate("/login");
     }
   }, [navigate]);
 
-  // Retrieve user details from local storage
   const userId = localStorage.getItem("userId");
   const email = localStorage.getItem("email");
 
-  const handleLogout = () => {
-    // Clear local storage
-    localStorage.removeItem("jwtToken");
-    localStorage.removeItem("userId");
-    localStorage.removeItem("email");
-    // Navigate to login page
-    navigate("/login");
-  };
-
   return (
-    <div>
-      <h1>Admin Dashboard</h1>
-      <div>
-        <h2>User Details:</h2>
-        <p><strong>Email:</strong> {email}</p>
-        <p><strong>User ID:</strong> {userId}</p>
-        <p><strong>Token:</strong> {localStorage.getItem("jwtToken")}</p>
-      </div>
-      <button onClick={handleLogout}>Logout</button>
-      {/* Your Admin Dashboard Code */}
+    <div className="flex">
+      <main className="p-8 pt-20">
+        <h1 className="text-3xl font-bold mb-4">Welcome to the Admin Dashboard</h1>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-semibold mb-4">User Details</h2>
+          <p><strong>Email:</strong> {email}</p>
+          <p><strong>User ID:</strong> {userId}</p>
+        </div>
+      </main>
     </div>
   );
 };

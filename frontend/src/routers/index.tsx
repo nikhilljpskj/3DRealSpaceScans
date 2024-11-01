@@ -47,6 +47,11 @@ import FooterNav from "components/FooterNav";
 import useWindowSize from "hooks/useWindowResize";
 import PageHome3 from "containers/PageHome/PageHome3";
 import AdminDashboard from "containers/AdminDashboard/AdminDashboard";
+import BookingPage from "containers/BookingPage/BookingForm";
+import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
+import TopNavbar from "containers/AdminNavbar/TopNavbar";
+import ViewBooking from "containers/ViewBooking/ViewBooking";
+import BookingDetails from "containers/BookingDetails/BookingDetails";
 import Header from 'components/Header/Header'
 
 
@@ -113,31 +118,58 @@ export const pages: Page[] = [
   { path: "/login", component: PageLogin },
   { path: "/subscription", component: PageSubcription },
   //
-  { path: "/dashboard", component: AdminDashboard }
+ 
+  { path: "/booking", component: BookingPage }
+
 ];
+
+const AdminLayout = () => (
+  <div className="flex">
+    <LeftNavbar />
+    <div className="flex-1 ml-64">
+      <TopNavbar />
+      <AdminDashboard />
+      
+    </div>
+  </div>
+);
+
 
 const MyRoutes = () => {
   const WIN_WIDTH = useWindowSize().width || window.innerWidth;
+
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Header />
+      <SiteHeader />
 
       <Routes>
         {pages.map(({ component, path }) => {
           const Component = component;
-          return <Route key={path} element={<Component />} path={path} />;
+          return (
+            <Route
+              key={path}
+              path={path}
+              element={
+                <>
+                  <SiteHeader />
+                  <Component />
+                  {WIN_WIDTH < 768 && <FooterNav />}
+                  <Footer />
+                </>
+              }
+            />
+          );
         })}
-        <Route element={<Page404 />} />
-      
+
+        {/* Admin Route with Custom Layout, without Header and Footer */}
+        <Route path="/dashboard" element={<AdminLayout />} />
+        <Route path="/booking-details/:id" element={<BookingDetails />} />
+        <Route path="/view-booking" element={<ViewBooking />} />
+        {/* Fallback Route */}
+        <Route path="*" element={<Page404 />} />
       </Routes>
-
-      {WIN_WIDTH < 768 && <FooterNav />}
-      <Footer />
-
-      
     </BrowserRouter>
-    
   );
 };
 
