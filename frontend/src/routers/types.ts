@@ -57,6 +57,7 @@ export interface LocationStates {
   "/page404"?: {};
   "/subscription"?: {};
   "/dashboard"?: {};
+  "/booking"?: {};
 }
 
 export type PathName = keyof LocationStates;
