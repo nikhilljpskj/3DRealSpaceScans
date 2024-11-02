@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios, { AxiosError } from 'axios';
+import { FaMapMarkerAlt, FaTimesCircle } from 'react-icons/fa';
 
 interface FileUpload {
   file: File;
@@ -11,7 +12,7 @@ interface ErrorResponse {
 }
 
 interface UploadedFile {
-  filename: string;
+  filename: string; 
   mimetype: string;
 }
 
@@ -47,6 +48,9 @@ const BookingPage: React.FC = () => {
   const [fileUploads, setFileUploads] = useState<FileUpload[]>([]);
   const [uploadedFilePaths, setUploadedFilePaths] = useState<string[]>([]); // Store file paths
   const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [autoLocation, setAutoLocation] = useState('');
+  const [manualLocation, setManualLocation] = useState('');
+  const [locationError, setLocationError] = useState('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target as { name: FormDataKeys; value: string }; // Use FormDataKeys type for name
@@ -65,7 +69,37 @@ const BookingPage: React.FC = () => {
     }
   };
   
-  
+  const handleLocationFetch = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          const locationUrl = `https://www.google.com/maps/place/${latitude},${longitude}/`;
+          setAutoLocation(locationUrl);
+          setManualLocation(''); // Clear manual input if auto location is fetched
+          setFormData((prev) => ({ ...prev, serviceLocation: locationUrl }));
+        },
+        (error) => {
+          setLocationError('Unable to retrieve your location.');
+        }
+      );
+    } else {
+      setLocationError('Geolocation is not supported by this browser.');
+    }
+  };
+
+  const handleManualLocationChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setManualLocation(value);
+    setAutoLocation(''); // Clear auto location if manual input is changed
+    setFormData((prev) => ({ ...prev, serviceLocation: value })); // Set the manual location to serviceLocation
+  };
+
+  const handleRemoveAutoLocation = () => {
+    setAutoLocation('');
+    setManualLocation(''); // Optional: Clear manual location as well
+    setFormData((prev) => ({ ...prev, serviceLocation: '' })); // Clear the serviceLocation
+  };
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -176,8 +210,25 @@ const handleFileUpload = async () => {
     {step === 2 && (
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h3 className="text-xl font-semibold mb-4">Service Details</h3>
-        <label className="block text-sm font-medium mb-1">Service Location</label>
-        <input type="text" name="serviceLocation" value={formData.serviceLocation} onChange={handleChange} required className="block w-full border border-gray-300 rounded-md p-2 mb-4" />
+            <div className="flex items-center mb-4">
+              <FaMapMarkerAlt className="w-5 h-5 text-gray-600 mr-2" />
+              <button type="button" className="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600" onClick={handleLocationFetch} disabled={!!manualLocation} >
+                Fetch Current Location
+              </button>
+            </div>
+            {autoLocation && (
+              <div className="flex items-center mb-4">
+                <span className="mr-2">Current Location:</span>
+                <a href={autoLocation} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                  {autoLocation}
+                </a>
+                <button type="button" onClick={handleRemoveAutoLocation} className="ml-2 text-red-600 hover:text-red-800">
+                  <FaTimesCircle className="w-5 h-5 inline" />
+                </button>
+              </div>
+            )}
+        <label className="block text-sm font-medium mb-1">Enter Location Manually</label>
+        <input type="text" name="serviceLocation" value={manualLocation} onChange={handleManualLocationChange} required className="block w-full border border-gray-300 rounded-md p-2 mb-4" disabled={!!autoLocation}  />
 
         <label className="block text-sm font-medium mb-1">Access Instructions</label>
         <textarea name="accessInstructions" value={formData.accessInstructions} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4"></textarea>

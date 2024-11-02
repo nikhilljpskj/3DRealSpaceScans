@@ -53,6 +53,7 @@ import TopNavbar from "containers/AdminNavbar/TopNavbar";
 import ViewBooking from "containers/ViewBooking/ViewBooking";
 import BookingDetails from "containers/BookingDetails/BookingDetails";
 import Header from "components/Header/Header";
+import UsersList from "containers/UserList/UsersList";
 
 export const pages: Page[] = [
   { path: "/", exact: true, component: PageHome2 },
@@ -91,7 +92,7 @@ export const pages: Page[] = [
   { path: "/pay-done", component: PayPage },
   //
   { path: "/author", component: AuthorPage },
-  { path: "/account", component: AccountPage },
+  
   { path: "/account-password", component: AccountPass },
   { path: "/account-savelists", component: AccountSavelists },
   { path: "/account-billing", component: AccountBilling },
@@ -159,6 +160,8 @@ const MyRoutes = () => {
         <Route path="/booking-details/:id" element={<BookingDetails />} />
         <Route path="/view-booking" element={<ViewBooking />} />
         <Route path="/signup" element={<PageSignUp />} />
+        <Route path="/account" element={<AccountPage />} />
+        <Route path="/users" element={<UsersList />} />
 
         {/* Fallback Route */}
         <Route path="*" element={<Page404 />} />

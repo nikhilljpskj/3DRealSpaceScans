@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import LeftNavbar from "containers/AdminNavbar/LeftNavbar"; 
 import TopNavbar from "containers/AdminNavbar/TopNavbar"; 
+import { useNavigate } from 'react-router-dom';
 
 interface FileDetail {
     filePath: string;
@@ -22,6 +23,14 @@ interface BookingDetail {
 const BookingDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [booking, setBooking] = useState<BookingDetail | null>(null);
+
+    const navigate = useNavigate();
+    useEffect(() => {
+        const token = localStorage.getItem("jwtToken");
+      if (!token) {
+        navigate("/login");
+      }
+    }, [navigate]);
 
     useEffect(() => {
         const fetchBookingDetails = async () => {

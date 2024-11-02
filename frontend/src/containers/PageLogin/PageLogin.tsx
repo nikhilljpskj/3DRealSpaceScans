@@ -22,10 +22,11 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
     try {
       const response = await axios.post("/api/auth/login", { email, password });
 
-      const { token, userId, email: userEmail } = response.data; // Destructure to get userId and email
+      const { token, userId, email: userEmail, admin: userAdmin } = response.data; // Destructure to get userId and email
       localStorage.setItem("jwtToken", token);
       localStorage.setItem("userId", userId.toString()); // Ensure userId is a string
       localStorage.setItem("email", userEmail);
+      localStorage.setItem("admin", userAdmin.toString());
       navigate("/dashboard"); // Change the route to your actual dashboard path
     } catch (error: any) {
       // Handle login error
