@@ -289,7 +289,7 @@ export const NAVIGATION_DEMO: NavItemType[] = [
 
   {
     id: ncNanoId(),
-    href: "/blog",
+    href: "/#",
     name: "Company",
     type: "dropdown",
     children: companyChildElements,
