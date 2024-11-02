@@ -30,9 +30,10 @@ import HIW1imgDark from "images/HIW2-1-dark.png";
 import HIW2imgDark from "images/HIW2-2-dark.png";
 import HIW3imgDark from "images/HIW2-3-dark.png";
 import rightImgPng from "images/our-features-2.png";
-
+import IndustryAndGeographicExpertise from "components/IndustryAndGeographicExpertise/IndustryAndGeographicExpertise"
 import SectionGridFeatureProperty from "./SectionGridFeatureProperty";
 import SectionDowloadApp from "./SectionDowloadApp";
+import FAQSection from "components/FAQSection/FAQSection";
 
 const DEMO_CATS_2: TaxonomyType[] = [
   {
@@ -42,7 +43,7 @@ const DEMO_CATS_2: TaxonomyType[] = [
     desc: "Immerse buyers in lifelike property walkthroughs with interactive 3D virtual tours. Elevate engagement and accelerate sales by showcasing every detail remotely.",
     taxonomy: "category",
     thumbnail:
-      "https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "/assets/services/3d-tour.jpg",
   },
   {
     id: "2",
@@ -51,7 +52,7 @@ const DEMO_CATS_2: TaxonomyType[] = [
     desc: "Generate precise, scalable 3D models for construction projects, enabling real-time progress tracking, troubleshooting, and stakeholder collaboration.",
     taxonomy: "category",
     thumbnail:
-      "https://images.pexels.com/photos/2351649/pexels-photo-2351649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "assets/services/digital-twin.jpg",
   },
   {
     id: "3",
@@ -60,7 +61,7 @@ const DEMO_CATS_2: TaxonomyType[] = [
     desc: "Transform empty spaces into beautifully furnished rooms, helping prospective buyers envision their future homes.",
     taxonomy: "category",
     thumbnail:
-      "https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "assets/services/virtual-staging.jpg",
   },
 ];
 
@@ -145,24 +146,9 @@ function PageHome2() {
           subHeading="Discover Our 3D Services That Bring Spaces to Life"
           uniqueClassName="PageHome2_s1"
         />
-
-        {/* SECTION */}
-        {/* <div className="relative py-16">
-          <BackgroundSection className="bg-neutral-100 dark:bg-black dark:bg-opacity-20 " />
-          <SectionGridAuthorBox boxCard="box2" />
-        </div> */}
-
-        {/* SECTION 1 */}
-        {/* <SectionSliderNewCategories
-          heading="Explore by types of stays"
-          subHeading="Explore houses based on 10 types of stays"
-          categoryCardType="card5"
-          itemPerRow={4}
-          uniqueClassName="PageHome2_s2"
-        /> */}
-
-        {/* SECTION */}
-        <SectionSubscribe2 />
+        
+        <IndustryAndGeographicExpertise />
+        <FAQSection />
       </div>
     </div>
   );
