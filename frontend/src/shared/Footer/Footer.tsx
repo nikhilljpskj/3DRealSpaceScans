@@ -82,8 +82,8 @@ const Footer: React.FC = () => {
         <div className="text-sm">
           <h2 className="font-semibold text-neutral-700 dark:text-neutral-200">Contact Info</h2>
           <ul className="mt-5 space-y-4">
-            <li>Email: example@gmail.com</li>
-            <li>Phone: +91 8921652221</li>
+            <li>Email: monemails@gmail.com</li>
+            <li>Phone: 818-533-8313</li>
             <li>Address: Willington, California 689523, USA</li>
           </ul>
           {/* Social Icons displayed horizontally */}

@@ -29,8 +29,8 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
       <div className="container py-16 lg:py-28 space-y-16 lg:space-y-28">
         <SectionHero
           rightImg={'/assets/about/about-header.jpg'}
-          heading="👋 About Us."
-          btnText=""
+          heading="About Us"
+          btnText="Get in touch with us"
           subHeading="We specialize in comprehensive 3D scanning services that capture every detail, turning physical spaces into accurate, navigable digital environments. Whether it’s creating virtual walkthroughs, archiving spaces, or aiding in complex project planning, we deliver results that are precise, versatile, and innovative."
         />
 

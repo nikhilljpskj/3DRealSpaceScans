@@ -35,6 +35,9 @@ export interface LocationStates {
   //
   "/blog"?: {};
   "/blog-single"?: {};
+  "/3d-virtual-tours"?: {};
+  "/digital-twin"?: {};
+  "/virtual-staging"?: {};
   //
   "/add-listing-1"?: {};
   "/add-listing-2"?: {};

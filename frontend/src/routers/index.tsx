@@ -53,13 +53,14 @@ import ViewBooking from "containers/ViewBooking/ViewBooking";
 import BookingDetails from "containers/BookingDetails/BookingDetails";
 import Header from "components/Header/Header";
 import UsersList from "containers/UserList/UsersList";
+import Service3DVirtualTour from 'containers/BlogPage/Service3DVirtualTour';
+import ServiceDigitalTwin from 'containers/BlogPage/ServiceDigitalTwin';
+import ServiceVirtualStaging  from 'containers/BlogPage/ServiceVirtualStaging'
 
 export const pages: Page[] = [
   { path: "/", exact: true, component: PageHome2 },
   { path: "/#", exact: true, component: PageHome2 },
-  { path: "/home-1-header-2", exact: true, component: PageHome },
-  { path: "/home-2", component: PageHome2 },
-  { path: "/home-3", component: PageHome3 },
+
   //
   { path: "/listing-stay", component: ListingStayPage },
   { path: "/listing-stay-map", component: ListingStayMapPage },
@@ -96,8 +97,11 @@ export const pages: Page[] = [
   { path: "/account-savelists", component: AccountSavelists },
   { path: "/account-billing", component: AccountBilling },
   //
-  { path: "/blog", component: BlogPage },
-  { path: "/blog-single", component: BlogSingle },
+  // { path: "/blog", component: BlogPage },
+  // { path: "/blog-single", component: BlogSingle },
+  { path: "/3d-virtual-tours", component: Service3DVirtualTour },
+  { path: "/digital-twin", component: ServiceDigitalTwin },
+  { path: "/virtual-staging", component: ServiceVirtualStaging },
   //
   { path: "/add-listing-1", component: PageAddListing1 },
   { path: "/add-listing-2", component: PageAddListing2 },

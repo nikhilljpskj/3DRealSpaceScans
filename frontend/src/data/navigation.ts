@@ -63,18 +63,18 @@ const megaMenuDemo: MegamenuItem[] = [
 const demoChildMenus: NavItemType[] = [
   {
     id: ncNanoId(),
-    href: "/#",
+    href: "/3d-virtual-tours",
     name: "3D Virtual Tours for Real Estate",
   },
   {
     id: ncNanoId(),
-    href: "/#",
+    href: "/digital-twin",
     name: "Digital Twins for Construction & Architecture",
     isNew: false,
   },
   {
     id: ncNanoId(),
-    href: "/#",
+    href: "/virtual-staging",
     name: "Virtual Staging",
     isNew: false,
   },
@@ -172,6 +172,14 @@ const companyChildElements: NavItemType[] = [
 // ];
 
 export const NAVIGATION_DEMO: NavItemType[] = [
+  {
+    id: ncNanoId(),
+    href: "/",
+    name: "Home",
+    type: "none",
+    children: demoChildMenus,
+    isNew: true,
+  },
   {
     id: ncNanoId(),
     href: "/",
