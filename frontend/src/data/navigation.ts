@@ -83,7 +83,7 @@ const demoChildMenus: NavItemType[] = [
 const companyChildElements: NavItemType[] = [
   {
     id: ncNanoId(),
-    href: "/",
+    href: "/about",
     name: "About",
   },
   {

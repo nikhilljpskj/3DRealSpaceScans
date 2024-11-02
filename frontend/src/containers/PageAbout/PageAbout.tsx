@@ -20,7 +20,7 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
       data-nc-id="PageAbout"
     >
       <Helmet>
-        <title>About || Booking React Template</title>
+        <title>About || 3DRealspace Scans</title>
       </Helmet>
 
       {/* ======== BG GLASS ======== */}
@@ -28,21 +28,19 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
 
       <div className="container py-16 lg:py-28 space-y-16 lg:space-y-28">
         <SectionHero
-          rightImg={rightImg}
+          rightImg={'/assets/about/about-header.jpg'}
           heading="👋 About Us."
           btnText=""
-          subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
+          subHeading="We specialize in comprehensive 3D scanning services that capture every detail, turning physical spaces into accurate, navigable digital environments. Whether it’s creating virtual walkthroughs, archiving spaces, or aiding in complex project planning, we deliver results that are precise, versatile, and innovative."
         />
 
         <SectionFounder />
-        <div className="relative py-16">
+        {/* <div className="relative py-16">
           <BackgroundSection />
           <SectionClientSay uniqueClassName="PageAbout_" />
-        </div>
+        </div> */}
 
         <SectionStatistic />
-
-        <SectionSubscribe2 />
       </div>
     </div>
   );

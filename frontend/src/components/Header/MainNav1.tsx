@@ -20,7 +20,7 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
           <img 
             src="Logo.png" 
             alt="3DRealspace Scans" 
-            className="h-24 w-auto object-contain" // Adjust the height and maintain aspect ratio
+            className="h-14 w-auto object-contain" // Adjust the height and maintain aspect ratio
           />
           <Navigation />
         </div>

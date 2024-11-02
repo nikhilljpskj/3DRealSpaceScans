@@ -41,7 +41,6 @@ import PageAddListing10 from "containers/PageAddListing1/PageAddListing10";
 import PageHome2 from "containers/PageHome/PageHome2";
 import ListingRealEstateMapPage from "containers/ListingRealEstatePage/ListingRealEstateMapPage";
 import ListingRealEstatePage from "containers/ListingRealEstatePage/ListingRealEstatePage";
-import SiteHeader from "containers/SiteHeader";
 import ListingFlightsPage from "containers/ListingFlightsPage/ListingFlightsPage";
 import FooterNav from "components/FooterNav";
 import useWindowSize from "hooks/useWindowResize";

@@ -10,20 +10,20 @@ export interface Statistic {
 const FOUNDER_DEMO: Statistic[] = [
   {
     id: "1",
-    heading: "10 million",
+    heading: "Innovation",
     subHeading:
-      "Articles have been public around the world (as of Sept. 30, 2021)",
+      "We are committed to staying ahead of the curve, integrating the latest advancements in technology for the best possible results.",
   },
   {
     id: "2",
-    heading: "100,000",
-    subHeading: "Registered users account (as of Sept. 30, 2021)",
+    heading: "Quality",
+    subHeading: "Every scan and project is completed with attention to detail and a dedication to excellence.",
   },
   {
     id: "3",
-    heading: "220+",
+    heading: "Collaboration",
     subHeading:
-      "Countries and regions have our presence (as of Sept. 30, 2021)",
+      "We work closely with our clients, transforming their goals into digital realities.",
   },
 ];
 
@@ -35,10 +35,11 @@ const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
   return (
     <div className={`nc-SectionStatistic relative ${className}`}>
       <Heading
-        desc=" We’re impartial and independent, and every day we create distinctive,
-          world-class programmes and content"
+        desc=" We’re passionate about turning ideas into reality. Guided by our core values, we strive to deliver innovative, precise, and impactful solutions tailored to each client’s unique vision.
+
+"
       >
-        🚀 Fast Facts
+        Core values
       </Heading>
       <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 xl:gap-8">
         {FOUNDER_DEMO.map((item) => (
