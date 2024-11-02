@@ -13,7 +13,7 @@ const LeftNavbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/register" className="hover:text-gray-300">
+          <Link to="/signup" className="hover:text-gray-300">
             Manage Users
           </Link>
         </li>

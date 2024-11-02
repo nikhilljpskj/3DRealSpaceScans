@@ -52,12 +52,11 @@ import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
 import TopNavbar from "containers/AdminNavbar/TopNavbar";
 import ViewBooking from "containers/ViewBooking/ViewBooking";
 import BookingDetails from "containers/BookingDetails/BookingDetails";
-
-
+import Header from "components/Header/Header";
 
 export const pages: Page[] = [
-  { path: "/", exact: true, component: PageHome },
-  { path: "/#", exact: true, component: PageHome },
+  { path: "/", exact: true, component: PageHome2 },
+  { path: "/#", exact: true, component: PageHome2 },
   { path: "/home-1-header-2", exact: true, component: PageHome },
   { path: "/home-2", component: PageHome2 },
   { path: "/home-3", component: PageHome3 },
@@ -113,13 +112,10 @@ export const pages: Page[] = [
   //
   { path: "/contact", component: PageContact },
   { path: "/about", component: PageAbout },
-  { path: "/signup", component: PageSignUp },
   { path: "/login", component: PageLogin },
   { path: "/subscription", component: PageSubcription },
   //
- 
   { path: "/booking", component: BookingPage }
-
 ];
 
 const AdminLayout = () => (
@@ -128,11 +124,9 @@ const AdminLayout = () => (
     <div className="flex-1 ml-64">
       <TopNavbar />
       <AdminDashboard />
-      
     </div>
   </div>
 );
-
 
 const MyRoutes = () => {
   const WIN_WIDTH = useWindowSize().width || window.innerWidth;
@@ -140,7 +134,7 @@ const MyRoutes = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-
+      
       <Routes>
         {pages.map(({ component, path }) => {
           const Component = component;
@@ -150,7 +144,7 @@ const MyRoutes = () => {
               path={path}
               element={
                 <>
-                  <SiteHeader />
+                  <Header />
                   <Component />
                   {WIN_WIDTH < 768 && <FooterNav />}
                   <Footer />
@@ -164,6 +158,8 @@ const MyRoutes = () => {
         <Route path="/dashboard" element={<AdminLayout />} />
         <Route path="/booking-details/:id" element={<BookingDetails />} />
         <Route path="/view-booking" element={<ViewBooking />} />
+        <Route path="/signup" element={<PageSignUp />} />
+
         {/* Fallback Route */}
         <Route path="*" element={<Page404 />} />
       </Routes>

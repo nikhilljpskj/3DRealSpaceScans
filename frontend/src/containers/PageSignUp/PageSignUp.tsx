@@ -4,6 +4,8 @@ import Input from "shared/Input/Input";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import LeftNavbar from "containers/AdminNavbar/LeftNavbar"; // Adjust the import path as necessary
+import TopNavbar from "containers/AdminNavbar/TopNavbar"; // Adjust the import path as necessary
 
 export interface PageSignUpProps {
   className?: string;
@@ -38,72 +40,78 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
   };
 
   return (
-    <div className={`nc-PageSignUp ${className}`} data-nc-id="PageSignUp">
-      <Helmet>
-        <title>Sign up || Booking React Template</title>
-      </Helmet>
-      <div className="container mb-24 lg:mb-32">
-        <h2 className="my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center">
-          Signup
-        </h2>
-        <div className="max-w-md mx-auto space-y-6 ">
-          {/* FORM */}
-          <form className="grid grid-cols-1 gap-6" onSubmit={handleSignUp}>
-            {error && <div className="text-red-500">{error}</div>}
-            <label className="block">
-              <span className="text-neutral-800 dark:text-neutral-200">Name</span>
-              <Input
-                type="text"
-                placeholder="Enter your name"
-                className="mt-1"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </label>
-            <label className="block">
-              <span className="text-neutral-800 dark:text-neutral-200">Email address</span>
-              <Input
-                type="email"
-                placeholder="example@example.com"
-                className="mt-1"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </label>
-            <label className="block">
-              <span className="text-neutral-800 dark:text-neutral-200">Mobile</span>
-              <Input
-                type="number"
-                placeholder="Enter your Mobile number"
-                className="mt-1"
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
-                required
-              />
-            </label>
-            <label className="block">
-              <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
-                Password
-              </span>
-              <Input 
-                type="password" 
-                placeholder="Enter your Password"
-                className="mt-1"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </label>
-            <ButtonPrimary type="submit">Continue</ButtonPrimary>
-          </form>
+    <div className="flex">
+      <LeftNavbar />
+      <div className="flex-1 ml-64">
+        <TopNavbar />
+        <div className={`nc-PageSignUp ${className}`} data-nc-id="PageSignUp">
+          <Helmet>
+            <title>Sign up || Booking React Template</title>
+          </Helmet>
+          <div className="container mb-24 lg:mb-32">
+            <h2 className="my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center">
+              Signup
+            </h2>
+            <div className="max-w-md mx-auto space-y-6 ">
+              {/* FORM */}
+              <form className="grid grid-cols-1 gap-6" onSubmit={handleSignUp}>
+                {error && <div className="text-red-500">{error}</div>}
+                <label className="block">
+                  <span className="text-neutral-800 dark:text-neutral-200">Name</span>
+                  <Input
+                    type="text"
+                    placeholder="Enter your name"
+                    className="mt-1"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </label>
+                <label className="block">
+                  <span className="text-neutral-800 dark:text-neutral-200">Email address</span>
+                  <Input
+                    type="email"
+                    placeholder="example@example.com"
+                    className="mt-1"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </label>
+                <label className="block">
+                  <span className="text-neutral-800 dark:text-neutral-200">Mobile</span>
+                  <Input
+                    type="number"
+                    placeholder="Enter your Mobile number"
+                    className="mt-1"
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                    required
+                  />
+                </label>
+                <label className="block">
+                  <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
+                    Password
+                  </span>
+                  <Input 
+                    type="password" 
+                    placeholder="Enter your Password"
+                    className="mt-1"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </label>
+                <ButtonPrimary type="submit">Create User</ButtonPrimary>
+              </form>
 
-          {/* ==== */}
-          <span className="block text-center text-neutral-700 dark:text-neutral-300">
-            Already have an account? {` `}
-            <Link to="/login">Sign in</Link>
-          </span>
+              {/* ==== */}
+              {/* <span className="block text-center text-neutral-700 dark:text-neutral-300">
+                Already have an account? {` `}
+                <Link to="/login">Sign in</Link>
+              </span> */}
+            </div>
+          </div>
         </div>
       </div>
     </div>
