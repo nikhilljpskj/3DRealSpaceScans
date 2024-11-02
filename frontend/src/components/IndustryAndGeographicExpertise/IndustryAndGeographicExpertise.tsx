@@ -2,7 +2,7 @@ import React from "react";
 
 const IndustryAndGeographicExpertise = () => {
   return (
-    <section className="py-2 bg-gray-50">
+    <div className="">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-gray-800 mb-2">
           Industry and Geographic Expertise
@@ -22,7 +22,7 @@ const IndustryAndGeographicExpertise = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

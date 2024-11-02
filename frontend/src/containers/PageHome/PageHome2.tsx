@@ -84,7 +84,7 @@ function PageHome2() {
       <div className="container relative space-y-24 mb-24 lg:space-y-28 lg:mb-28">
         <SectionHero2 className="" />
 
-        {/* SECTION 1 */}
+        {/* SECTION 1 logos of popular clients */}
         <div className="ncSectionLogos grid grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-16">
           <div className="flex items-end justify-center">
             <img className="block dark:hidden" src={logo1} alt="logo1" />
