@@ -4,6 +4,7 @@ import axios from 'axios';
 import LeftNavbar from "containers/AdminNavbar/LeftNavbar"; 
 import TopNavbar from "containers/AdminNavbar/TopNavbar"; 
 
+
 interface Booking {
     id: number;
     fullName: string;
@@ -16,6 +17,15 @@ interface Booking {
 const ViewBooking: React.FC = () => {
     const [bookings, setBookings] = useState<Booking[]>([]);
     const navigate = useNavigate();
+
+
+
+    useEffect(() => {
+      const token = localStorage.getItem("jwtToken");
+      if (!token) {
+        navigate("/login");
+      }
+    }, [navigate]);
 
     useEffect(() => {
         const fetchBookings = async () => {

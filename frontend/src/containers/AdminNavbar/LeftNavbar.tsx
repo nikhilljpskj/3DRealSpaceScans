@@ -1,6 +1,7 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
+
+const Admin = localStorage.getItem("admin");
 
 const LeftNavbar = () => {
   return (
@@ -12,11 +13,21 @@ const LeftNavbar = () => {
             Dashboard
           </Link>
         </li>
-        <li>
-          <Link to="/signup" className="hover:text-gray-300">
-            Manage Users
-          </Link>
-        </li>
+        {/* Conditionally render "Add User" and "Users" based on admin value */}
+        {Admin === "1" && (
+          <>
+            <li>
+              <Link to="/signup" className="hover:text-gray-300">
+                Add User
+              </Link>
+            </li>
+            <li>
+              <Link to="/users" className="hover:text-gray-300">
+                Users
+              </Link>
+            </li>
+          </>
+        )}
         <li>
           <Link to="/view-booking" className="hover:text-gray-300">
             Bookings

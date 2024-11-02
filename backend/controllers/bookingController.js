@@ -1,10 +1,19 @@
 const bookingModel = require('../models/bookingModel');
+const { sendConfirmationEmail } = require('../mailer/mailer');
 
 // Create a new booking
 exports.createBooking = async (req, res) => {
     try {
         const bookingData = req.body; // Assuming booking data is sent in the body
         const result = await bookingModel.createBooking(bookingData);
+
+        // Send confirmation email
+        await sendConfirmationEmail(bookingData.email, {
+            bookingId: result.insertId,
+            date: bookingData.date, // Assuming these fields are in bookingData
+            time: bookingData.time,
+        });
+
         res.status(201).json({ message: 'Booking created successfully', bookingId: result.insertId });
     } catch (error) {
         console.error('Error creating booking:', error);

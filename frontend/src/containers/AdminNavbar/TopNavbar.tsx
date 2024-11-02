@@ -29,7 +29,7 @@ const TopNavbar = () => {
           <div className="absolute right-0 mt-2 w-48 bg-white text-gray-900 rounded-lg shadow-lg">
             <button
               className="w-full text-left px-4 py-2 hover:bg-gray-100"
-              onClick={() => navigate("/admin/profile")}
+              onClick={() => navigate("/account")}
             >
               Profile
             </button>
