@@ -41,24 +41,18 @@ import PageAddListing10 from "containers/PageAddListing1/PageAddListing10";
 import PageHome2 from "containers/PageHome/PageHome2";
 import ListingRealEstateMapPage from "containers/ListingRealEstatePage/ListingRealEstateMapPage";
 import ListingRealEstatePage from "containers/ListingRealEstatePage/ListingRealEstatePage";
+import SiteHeader from "containers/SiteHeader";
 import ListingFlightsPage from "containers/ListingFlightsPage/ListingFlightsPage";
 import FooterNav from "components/FooterNav";
 import useWindowSize from "hooks/useWindowResize";
 import PageHome3 from "containers/PageHome/PageHome3";
 import AdminDashboard from "containers/AdminDashboard/AdminDashboard";
-import BookingPage from "containers/BookingPage/BookingForm";
-import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
-import TopNavbar from "containers/AdminNavbar/TopNavbar";
-import ViewBooking from "containers/ViewBooking/ViewBooking";
-import BookingDetails from "containers/BookingDetails/BookingDetails";
-import Header from "components/Header/Header"
-import SiteHeader from "containers/SiteHeader";
 
 
 
 export const pages: Page[] = [
-  { path: "/", exact: true, component: PageHome2 },
-  { path: "/#", exact: true, component: PageHome2 },
+  { path: "/", exact: true, component: PageHome },
+  { path: "/#", exact: true, component: PageHome },
   { path: "/home-1-header-2", exact: true, component: PageHome },
   { path: "/home-2", component: PageHome2 },
   { path: "/home-3", component: PageHome3 },
@@ -118,56 +112,31 @@ export const pages: Page[] = [
   { path: "/login", component: PageLogin },
   { path: "/subscription", component: PageSubcription },
   //
- 
-  { path: "/booking", component: BookingPage }
-
+  { path: "/dashboard", component: AdminDashboard }
 ];
-
-const AdminLayout = () => (
-  <div className="flex">
-    <LeftNavbar />
-    <div className="flex-1 ml-64">
-      <TopNavbar />
-      <AdminDashboard />
-      
-    </div>
-  </div>
-);
-
 
 const MyRoutes = () => {
   const WIN_WIDTH = useWindowSize().width || window.innerWidth;
-
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Header />
+      <SiteHeader />
+
       <Routes>
         {pages.map(({ component, path }) => {
           const Component = component;
-          return (
-            <Route
-              key={path}
-              path={path}
-              element={
-                <>
-                  <Component />
-                  {WIN_WIDTH < 768 && <FooterNav />}
-                  <Footer />
-                </>
-              }
-            />
-          );
+          return <Route key={path} element={<Component />} path={path} />;
         })}
-
-        {/* Admin Route with Custom Layout, without Header and Footer */}
-        <Route path="/dashboard" element={<AdminLayout />} />
-        <Route path="/booking-details/:id" element={<BookingDetails />} />
-        <Route path="/view-booking" element={<ViewBooking />} />
-        {/* Fallback Route */}
-        <Route path="*" element={<Page404 />} />
+        <Route element={<Page404 />} />
+      
       </Routes>
+
+      {WIN_WIDTH < 768 && <FooterNav />}
+      <Footer />
+
+      
     </BrowserRouter>
+    
   );
 };
 

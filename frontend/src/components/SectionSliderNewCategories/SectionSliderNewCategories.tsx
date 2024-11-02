@@ -15,7 +15,7 @@ export interface SectionSliderNewCategoriesProps {
   subHeading?: string;
   categories?: TaxonomyType[];
   categoryCardType?: "card3" | "card4" | "card5";
-  itemPerRow?: 4 | 5;
+  itemPerRow?: 3 | 5;
   sliderStyle?: "style1" | "style2";
   uniqueClassName: string;
 }

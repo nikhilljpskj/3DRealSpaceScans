@@ -2,6 +2,7 @@ import Logo from "shared/Logo/Logo";
 import SocialsList1 from "shared/SocialsList1/SocialsList1";
 import { CustomLink } from "data/types";
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export interface WidgetFooterMenu {
   id: string;
@@ -12,46 +13,21 @@ export interface WidgetFooterMenu {
 const widgetMenus: WidgetFooterMenu[] = [
   {
     id: "5",
-    title: "Getting started",
+    title: "Company",
     menus: [
-      { href: "#", label: "Installation" },
-      { href: "#", label: "Release Notes" },
-      { href: "#", label: "Upgrade Guide" },
-      { href: "#", label: "Browser Support" },
-      { href: "#", label: "Editor Support" },
+      { href: "#", label: "About" },
+      { href: "#", label: "Testimonials" },
+      { href: "#", label: "Terms & Conditions" },
+      { href: "#", label: "Case Studies" },
     ],
   },
   {
     id: "1",
-    title: "Explore",
+    title: "Services",
     menus: [
-      { href: "#", label: "Design features" },
-      { href: "#", label: "Prototyping" },
-      { href: "#", label: "Design systems" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Security" },
-    ],
-  },
-  {
-    id: "2",
-    title: "Resources",
-    menus: [
-      { href: "#", label: "Best practices" },
-      { href: "#", label: "Support" },
-      { href: "#", label: "Developers" },
-      { href: "#", label: "Learn design" },
-      { href: "#", label: "Releases" },
-    ],
-  },
-  {
-    id: "4",
-    title: "Community",
-    menus: [
-      { href: "#", label: "Discussion Forums" },
-      { href: "#", label: "Code of Conduct" },
-      { href: "#", label: "Community Resources" },
-      { href: "#", label: "Contributing" },
-      { href: "#", label: "Concurrent Mode" },
+      { href: "#", label: "3D virtual tours" },
+      { href: "#", label: "Digital twins for construction & architecture" },
+      { href: "#", label: "Virtual staging" },
     ],
   },
 ];
@@ -68,7 +44,7 @@ const Footer: React.FC = () => {
             <li key={index}>
               <a
                 key={index}
-                className="text-neutral-6000 dark:text-neutral-300 hover:text-black dark:hover:text-white"
+                className="text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white"
                 href={item.href}
               >
                 {item.label}
@@ -82,16 +58,39 @@ const Footer: React.FC = () => {
 
   return (
     <div className="nc-Footer relative py-24 lg:py-28 border-t border-neutral-200 dark:border-neutral-700">
-      <div className="container grid grid-cols-2 gap-y-10 gap-x-5 sm:gap-x-8 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-10 ">
-        <div className="grid grid-cols-4 gap-5 col-span-2 md:col-span-4 lg:md:col-span-1 lg:flex lg:flex-col">
-          <div className="col-span-2 md:col-span-1">
-            <Logo />
-          </div>
-          <div className="col-span-2 flex items-center md:col-span-3">
-            <SocialsList1 className="flex items-center space-x-3 lg:space-x-0 lg:flex-col lg:space-y-2.5 lg:items-start" />
+      <div className="container grid grid-cols-2 gap-y-10 gap-x-5 sm:gap-x-8 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-10">
+        {/* Logo and Description */}
+        <div className="col-span-2 md:col-span-4 lg:col-span-2">
+        <Link to="/">
+          <img 
+            src="Logo.png" 
+            alt="3DRealspace Scans" 
+            className="h-24 w-40 object-contain" // Adjusted width of the logo
+          />
+        </Link>
+          <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-300 text-justify">
+            3DRealspace Scans provides innovative 3D scanning and virtual tour services across the USA. Specializing in digital twins for construction, architecture, and virtual staging, we bring spaces to life with precision and immersive detail, setting new standards in virtual engagement.
+          </p>
+
+        </div>
+
+
+        {/* Render the remaining widget menus */}
+        {widgetMenus.map(renderWidgetMenuItem)}
+
+        {/* Contact Info */}
+        <div className="text-sm">
+          <h2 className="font-semibold text-neutral-700 dark:text-neutral-200">Contact Info</h2>
+          <ul className="mt-5 space-y-4">
+            <li>Email: example@gmail.com</li>
+            <li>Phone: +91 8921652221</li>
+            <li>Address: Willington, California 689523, USA</li>
+          </ul>
+          {/* Social Icons displayed horizontally */}
+          <div className="mt-6">
+            <SocialsList1 className="flex space-x-3" />
           </div>
         </div>
-        {widgetMenus.map(renderWidgetMenuItem)}
       </div>
     </div>
   );

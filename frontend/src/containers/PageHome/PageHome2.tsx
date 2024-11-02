@@ -30,55 +30,38 @@ import HIW1imgDark from "images/HIW2-1-dark.png";
 import HIW2imgDark from "images/HIW2-2-dark.png";
 import HIW3imgDark from "images/HIW2-3-dark.png";
 import rightImgPng from "images/our-features-2.png";
-
+import IndustryAndGeographicExpertise from "components/IndustryAndGeographicExpertise/IndustryAndGeographicExpertise"
 import SectionGridFeatureProperty from "./SectionGridFeatureProperty";
 import SectionDowloadApp from "./SectionDowloadApp";
+import FAQSection from "components/FAQSection/FAQSection";
 
 const DEMO_CATS_2: TaxonomyType[] = [
   {
     id: "1",
-    href: "/listing-stay",
-    name: "Enjoy the great cold",
+    href: "/#",
+    name: "3D Virtual Tours for Real Estate",
+    desc: "Immerse buyers in lifelike property walkthroughs with interactive 3D virtual tours. Elevate engagement and accelerate sales by showcasing every detail remotely.",
     taxonomy: "category",
-    count: 188288,
     thumbnail:
-      "https://images.pexels.com/photos/5764100/pexels-photo-5764100.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "/assets/services/3d-tour.jpg",
   },
   {
-    id: "222",
-    href: "/listing-stay",
-    name: "Sleep in a floating way",
+    id: "2",
+    href: "/#",
+    name: "Digital Twins for Construction & Architecture",
+    desc: "Generate precise, scalable 3D models for construction projects, enabling real-time progress tracking, troubleshooting, and stakeholder collaboration.",
     taxonomy: "category",
-    count: 188288,
     thumbnail:
-      "https://images.pexels.com/photos/2869499/pexels-photo-2869499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "assets/services/digital-twin.jpg",
   },
   {
     id: "3",
-    href: "/listing-stay",
-    name: "In the billionaire's house",
+    href: "/#",
+    name: "Virtual Staging",
+    desc: "Transform empty spaces into beautifully furnished rooms, helping prospective buyers envision their future homes.",
     taxonomy: "category",
-    count: 188288,
     thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "4",
-    href: "/listing-stay",
-    name: "Cool in the deep forest",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/247532/pexels-photo-247532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "5",
-    href: "/listing-stay",
-    name: "In the billionaire's house",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "assets/services/virtual-staging.jpg",
   },
 ];
 
@@ -101,7 +84,7 @@ function PageHome2() {
       <div className="container relative space-y-24 mb-24 lg:space-y-28 lg:mb-28">
         <SectionHero2 className="" />
 
-        {/* SECTION 1 */}
+        {/* SECTION 1 logos of popular clients */}
         <div className="ncSectionLogos grid grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-16">
           <div className="flex items-end justify-center">
             <img className="block dark:hidden" src={logo1} alt="logo1" />
@@ -133,65 +116,39 @@ function PageHome2() {
               id: 1,
               img: HIW1img,
               imgDark: HIW1imgDark,
-              title: "Smart search",
-              desc: "Name the area or type of home you are looking for the search bar. Our app will find you the perfect match.",
+              title: "Select Your Service",
+              desc: "Choose from our range of 3D solutions: Virtual Tours, Digital Twins, or Virtual Staging. Each service is tailored to meet unique project needs.",
             },
             {
               id: 2,
               img: HIW2img,
               imgDark: HIW2imgDark,
-              title: "Choose property",
-              desc: "From the number of options our app will provide, you can select any property that you like to explore.",
+              title: "Customize Your Project",
+              desc: "Provide project details, including property type, area size, and any special requirements. This helps us tailor our services to your vision.",
             },
             {
               id: 3,
               img: HIW3img,
               imgDark: HIW3imgDark,
-              title: "Book you property",
-              desc: "Find a home or space from our search bar. Enter your specific location, property type and price range.",
+              title: "Schedule & Confirm",
+              desc: "Pick a convenient date for a site visit or virtual consultation. After booking, receive a confirmation and instructions to complete your reservation.",
             },
           ]}
         />
 
-        {/* SECTION */}
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionGridFeatureProperty />
-        </div>
-
-        {/* SECTION2 */}
-        <SectionOurFeatures type="type2" rightImg={rightImgPng} />
-
-        {/* SECTION */}
-        <SectionDowloadApp />
 
         {/* SECTION 1 */}
         <SectionSliderNewCategories
           categories={DEMO_CATS_2}
           categoryCardType="card4"
-          itemPerRow={4}
-          heading="Suggestions for discovery"
-          subHeading="Popular places to stay that Chisfis recommends for you"
+          itemPerRow={3}
+          heading="Our services"
+          subHeading="Discover Our 3D Services That Bring Spaces to Life"
           uniqueClassName="PageHome2_s1"
         />
-
-        {/* SECTION */}
-        <div className="relative py-16">
-          <BackgroundSection className="bg-neutral-100 dark:bg-black dark:bg-opacity-20 " />
-          <SectionGridAuthorBox boxCard="box2" />
-        </div>
-
-        {/* SECTION 1 */}
-        <SectionSliderNewCategories
-          heading="Explore by types of stays"
-          subHeading="Explore houses based on 10 types of stays"
-          categoryCardType="card5"
-          itemPerRow={5}
-          uniqueClassName="PageHome2_s2"
-        />
-
-        {/* SECTION */}
-        <SectionSubscribe2 />
+        
+        <IndustryAndGeographicExpertise />
+        <FAQSection />
       </div>
     </div>
   );
