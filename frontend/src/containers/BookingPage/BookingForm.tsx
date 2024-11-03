@@ -187,22 +187,22 @@ const handleFileUpload = async () => {
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
         <label className="block text-sm font-medium mb-1">Full Name</label>
-        <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required className="block w-full border border-gray-300 rounded-md p-2 mb-4" />
+        <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3" />
 
         <label className="block text-sm font-medium mb-1">Email Address</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} required className="block w-full border border-gray-300 rounded-md p-2 mb-4" />
+        <input type="email" name="email" value={formData.email} onChange={handleChange} required className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3" />
 
         <label className="block text-sm font-medium mb-1">Phone Number</label>
-        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="block w-full border border-gray-300 rounded-md p-2 mb-4" />
+        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3" />
 
         <label className="block text-sm font-medium mb-1">Preferred Contact Method</label>
-        <select name="contactMethod" value={formData.contactMethod} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4">
+        <select name="contactMethod" value={formData.contactMethod} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3">
           <option value="Call">Call</option>
           <option value="Text">Text</option>
         </select>
 
         <label className="block text-sm font-medium mb-1">Company/Organization Name</label>
-        <input type="text" name="company" value={formData.company} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4" />
+        <input type="text" name="company" value={formData.company} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3" />
         <button className="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600" type="button" onClick={nextStep}>Next</button>
       </div>
     )}
@@ -228,20 +228,20 @@ const handleFileUpload = async () => {
               </div>
             )}
         <label className="block text-sm font-medium mb-1">Enter Location Manually</label>
-        <input type="text" name="serviceLocation" value={manualLocation} onChange={handleManualLocationChange} required className="block w-full border border-gray-300 rounded-md p-2 mb-4" disabled={!!autoLocation}  />
+        <input type="text" name="serviceLocation" value={manualLocation} onChange={handleManualLocationChange} required className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3" disabled={!!autoLocation}  />
 
         <label className="block text-sm font-medium mb-1">Access Instructions</label>
-        <textarea name="accessInstructions" value={formData.accessInstructions} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4"></textarea>
+        <textarea name="accessInstructions" value={formData.accessInstructions} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3"></textarea>
 
         <label className="block text-sm font-medium mb-1">Type of 3D Scan</label>
-        <select name="scanType" value={formData.scanType} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4">
+        <select name="scanType" value={formData.scanType} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3">
           <option value="Residential">Residential</option>
           <option value="Commercial">Commercial</option>
         </select>
 
         <label className="block text-sm font-medium mb-1">Upload Files (max 15 MB each)</label>
-        <input type="file" className="mt-1 block w-full border border-gray-300 rounded-md p-2 mb-4" multiple onChange={handleFileChange} />
-        <button type="button" onClick={handleFileUpload} className="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600">Upload</button>
+        <input type="file" className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-neutral-300 dark:border-neutral-6000 border-dashed rounded-md" multiple onChange={handleFileChange} />
+        <button type="button" onClick={handleFileUpload} className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition duration-200">Upload</button>
 
         {fileUploads.map((fileUpload, idx) => (
           <div key={idx} className="mb-2">
@@ -256,10 +256,10 @@ const handleFileUpload = async () => {
         ))}
 
         <label className="block text-sm font-medium mb-1">Preferred Date/Time</label>
-        <input type="datetime-local" name="preferredDate" value={formData.preferredDate} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4" />
+        <input type="datetime-local" name="preferredDate" value={formData.preferredDate} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3" />
 
         <label className="block text-sm font-medium mb-1">Backup Date/Time</label>
-        <input type="datetime-local" name="backupDate" value={formData.backupDate} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4" />
+        <input type="datetime-local" name="backupDate" value={formData.backupDate} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3" />
         <button className="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600" type="button" onClick={nextStep}>Next</button>
       </div>
     )}
@@ -268,24 +268,24 @@ const handleFileUpload = async () => {
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h3 className="text-xl font-semibold mb-4">Project Specifications</h3>
         <label className="block text-sm font-medium mb-1">Purpose of the Scan</label>
-        <select name="purpose" value={formData.purpose} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4">
+        <select name="purpose" value={formData.purpose} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3">
           <option value="Real Estate">Real Estate</option>
           <option value="Construction">Construction</option>
           <option value="Marketing">Marketing</option>
         </select>
 
         <label className="block text-sm font-medium mb-1">Project Scope</label>
-        <input type="text" name="projectScope" value={formData.projectScope} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4" />
+        <input type="text" name="projectScope" value={formData.projectScope} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3" />
 
         <label className="block text-sm font-medium mb-1">Number of Rooms/Areas</label>
-        <select multiple value={formData.numberOfRooms} onChange={e => handleMultiSelectChange('numberOfRooms', e.target.value)} className="block w-full border border-gray-300 rounded-md p-2 mb-4">
+        <select multiple value={formData.numberOfRooms} onChange={e => handleMultiSelectChange('numberOfRooms', e.target.value)} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-30 px-4 py-3">
           <option value="Living Room">Living Room</option>
           <option value="Kitchen">Kitchen</option>
           <option value="Bedroom">Bedroom</option>
         </select>
 
         <label className="block text-sm font-medium mb-1">Output Format Preferences</label>
-        <select multiple value={formData.outputFormats} onChange={e => handleMultiSelectChange('outputFormats', e.target.value)} className="block w-full border border-gray-300 rounded-md p-2 mb-4">
+        <select multiple value={formData.outputFormats} onChange={e => handleMultiSelectChange('outputFormats', e.target.value)} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-40 px-4 py-3">
           <option value="OBJ">OBJ</option>
           <option value="STL">STL</option>
           <option value="PLY">PLY</option>
@@ -300,13 +300,16 @@ const handleFileUpload = async () => {
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h3 className="text-xl font-semibold mb-4">Additional Information</h3>
         <label className="block text-sm font-medium mb-1">Special Instructions</label>
-        <textarea name="specialInstructions" value={formData.specialInstructions} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4"></textarea>
+        <textarea name="specialInstructions" value={formData.specialInstructions} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-25 px-4 py-3"></textarea>
 
         <label className="block text-sm font-medium mb-1">Budget Range</label>
-        <input type="range" name="budgetRange" min="0" max="5000" value={formData.budgetRange} onChange={handleChange} className="w-full" />
-
+            <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium">{formData.budgetRange}</span>
+            </div>
+          <input type="range" name="budgetRange" min="0" max="5000" value={formData.budgetRange} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3"/>
+          
         <label className="block text-sm font-medium mb-1">Project Timeline</label>
-        <select name="projectTimeline" value={formData.projectTimeline} onChange={handleChange} className="block w-full border border-gray-300 rounded-md p-2 mb-4">
+        <select name="projectTimeline" value={formData.projectTimeline} onChange={handleChange} className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-600 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3">
           <option value="Flexible">Flexible</option>
           <option value="Urgent">Urgent</option>
           <option value="Within a Week">Within a Week</option>

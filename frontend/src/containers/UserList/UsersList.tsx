@@ -78,11 +78,13 @@ const UsersList: React.FC = () => {
         }
     };
 
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+    
     return (
-        <div className="flex min-h-screen bg-gray-100">
-            <LeftNavbar />
+        <div className="flex min-h-screen bg-gradient-to-r from-green-200 to-blue-300">
+            <LeftNavbar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
             <div className="flex-1 ml-64">
-                <TopNavbar />
+                <TopNavbar sidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
                 <div className="p-8 mt-16">
                     <h2 className="text-3xl font-semibold text-gray-800 mb-6">User List</h2>
                     <div className="overflow-x-auto bg-white shadow-md rounded-lg">

@@ -46,3 +46,49 @@ exports.getBookingDetails = async (req, res) => {
         res.status(500).json({ message: 'Error fetching booking details', error });
     }
 };
+
+exports.updateBookingStatus = async (req, res) => {
+    const { bookingId } = req.params;
+    const { status } = req.body;
+    try {
+        await bookingModel.updateStatus(bookingId, status); // Ensure bookingModel.updateStatus is defined
+        res.status(200).json({ message: 'Booking status updated successfully' });
+    } catch (error) {
+        console.error('Error updating booking status:', error);
+        res.status(500).json({ message: 'Error updating booking status' });
+    }
+};
+
+
+exports.getPendingBookings = async (req, res) => {
+    const page = parseInt(req.query.page) || 1;
+    const limit = 10; // You can adjust this based on your needs
+
+    try {
+        const pendingBookings = await bookingModel.getPendingBookings(page, limit);
+        const ptotalCount = await bookingModel.countPendingBookings();
+        
+
+        res.status(200).json({
+            pendingBookings: pendingBookings,
+            ptotalCount: ptotalCount,
+        });
+    } catch (error) {
+        console.error('Error fetching pending bookings:', error);
+        res.status(500).json({ message: 'Error fetching pending bookings', error });
+    }
+};
+
+exports.getAllBookings = async (req, res) => {
+
+    try {
+        const atotalCount = await bookingModel.countAllBookings();
+        
+        res.status(200).json({
+            atotalCount: atotalCount,
+        });
+    } catch (error) {
+        console.error('Error fetching all bookings:', error);
+        res.status(500).json({ message: 'Error fetching all bookings', error });
+    }
+};
