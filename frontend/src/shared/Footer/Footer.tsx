@@ -1,4 +1,3 @@
-import Logo from "shared/Logo/Logo";
 import SocialsList1 from "shared/SocialsList1/SocialsList1";
 import { CustomLink } from "data/types";
 import React from "react";
@@ -15,7 +14,7 @@ const widgetMenus: WidgetFooterMenu[] = [
     id: "5",
     title: "Company",
     menus: [
-      { href: "#", label: "About" },
+      { href: "/about", label: "About" },
       { href: "#", label: "Testimonials" },
       { href: "#", label: "Terms & Conditions" },
       { href: "#", label: "Case Studies" },
@@ -25,9 +24,9 @@ const widgetMenus: WidgetFooterMenu[] = [
     id: "1",
     title: "Services",
     menus: [
-      { href: "#", label: "3D virtual tours" },
-      { href: "#", label: "Digital twins for construction & architecture" },
-      { href: "#", label: "Virtual staging" },
+      { href: "/3d-virtual-tours", label: "3D virtual tours" },
+      { href: "/digital-twin", label: "Digital twins for construction & architecture" },
+      { href: "/virtual-staging", label: "Virtual staging" },
     ],
   },
 ];
