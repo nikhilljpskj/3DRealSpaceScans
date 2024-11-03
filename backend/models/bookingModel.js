@@ -59,6 +59,55 @@ const getBookingDetails = (id) => {
     });
 };
 
+const updateStatus = (bookingId, status) => {
+    return new Promise((resolve, reject) => {
+        const query = 'UPDATE bookings SET status = ? WHERE id = ?';
+        db.query(query, [status, bookingId], (err, result) => {
+            if (err) reject(err);
+            else resolve(result);
+        });
+    });
+};
+
+const getPendingBookings = (page, limit) => {
+    const offset = (page - 1) * limit;
+    const query = `
+        SELECT * FROM bookings
+        WHERE status = 0
+        LIMIT ? OFFSET ?
+    `;
+    return new Promise((resolve, reject) => {
+        db.query(query, [limit, offset], (err, results) => {
+            if (err) return reject(err);
+            resolve(results);
+        });
+    });
+};
+
+
+
+// Count total pending bookings
+const countPendingBookings = () => {
+    const query = `SELECT COUNT(*) AS count FROM bookings WHERE status = 0`;
+    return new Promise((resolve, reject) => {
+        db.query(query, (err, results) => {
+            if (err) return reject(err);
+            resolve(results[0].count);
+        });
+    });
+};
+
+// Count total bookings
+const countAllBookings = () => {
+    const query = `SELECT COUNT(*) AS count FROM bookings`;
+    return new Promise((resolve, reject) => {
+        db.query(query, (err, results) => {
+            if (err) return reject(err);
+            resolve(results[0].count);
+        });
+    });
+};
+
 
 
 // Export all the functions
@@ -66,4 +115,8 @@ module.exports = {
     createBooking,
     getBookings,
     getBookingDetails,
+    updateStatus,
+    countPendingBookings,
+    countAllBookings,
+    getPendingBookings,
 };

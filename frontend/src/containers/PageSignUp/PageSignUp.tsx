@@ -20,9 +20,9 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-      const token = localStorage.getItem("jwtToken");
+    const token = localStorage.getItem("jwtToken");
     if (!token) {
-       navigate("/login");
+      navigate("/login");
     }
   }, [navigate]);
 
@@ -46,11 +46,12 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
     }
   };
 
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div className="flex">
-      <LeftNavbar />
+    <div className="flex min-h-screen bg-gradient-to-r from-green-200 to-blue-300">
+      <LeftNavbar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="flex-1 ml-64">
-        <TopNavbar />
+        <TopNavbar sidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
         <div className={`nc-PageSignUp ${className}`} data-nc-id="PageSignUp">
           <Helmet>
             <title>Add Staff</title>

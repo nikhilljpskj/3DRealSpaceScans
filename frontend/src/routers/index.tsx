@@ -1,4 +1,4 @@
-import React from "react";
+import { useState} from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Page } from "./types";
 import ScrollToTop from "./ScrollToTop";
@@ -47,8 +47,8 @@ import useWindowSize from "hooks/useWindowResize";
 import PageHome3 from "containers/PageHome/PageHome3";
 import AdminDashboard from "containers/AdminDashboard/AdminDashboard";
 import BookingPage from "containers/BookingPage/BookingForm";
-import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
-import TopNavbar from "containers/AdminNavbar/TopNavbar";
+// import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
+// import TopNavbar from "containers/AdminNavbar/TopNavbar";
 import ViewBooking from "containers/ViewBooking/ViewBooking";
 import BookingDetails from "containers/BookingDetails/BookingDetails";
 import Header from "components/Header/Header";
@@ -122,15 +122,7 @@ export const pages: Page[] = [
   { path: "/booking", component: BookingPage }
 ];
 
-const AdminLayout = () => (
-  <div className="flex">
-    <LeftNavbar />
-    <div className="flex-1 ml-64">
-      <TopNavbar />
-      <AdminDashboard />
-    </div>
-  </div>
-);
+
 
 const MyRoutes = () => {
   const WIN_WIDTH = useWindowSize().width || window.innerWidth;
@@ -159,7 +151,7 @@ const MyRoutes = () => {
         })}
 
         {/* Admin Route with Custom Layout, without Header and Footer */}
-        <Route path="/dashboard" element={<AdminLayout />} />
+        <Route path="/dashboard" element={<AdminDashboard />} />
         <Route path="/booking-details/:id" element={<BookingDetails />} />
         <Route path="/view-booking" element={<ViewBooking />} />
         <Route path="/signup" element={<PageSignUp />} />

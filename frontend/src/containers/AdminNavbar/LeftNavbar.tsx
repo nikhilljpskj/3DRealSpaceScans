@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const LeftNavbar = () => {
+const LeftNavbar: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
     const [adminLevel, setAdminLevel] = useState(localStorage.getItem("admin"));
     const navigate = useNavigate();
 
-    // Update the admin level state when it changes in localStorage
     useEffect(() => {
         const updateAdminLevel = () => setAdminLevel(localStorage.getItem("admin"));
-
-        // Set up an event listener to detect changes in localStorage (like when logging in/out)
         window.addEventListener("storage", updateAdminLevel);
-
-        // Cleanup the event listener on unmount
         return () => window.removeEventListener("storage", updateAdminLevel);
     }, []);
 
-    // Redirect to the correct dashboard if adminLevel is undefined (not logged in)
     useEffect(() => {
         if (adminLevel === null) {
             navigate("/login");
@@ -24,14 +18,18 @@ const LeftNavbar = () => {
     }, [adminLevel, navigate]);
 
     return (
-        <div className="w-60 pt-16 bg-gray-900 text-white h-screen p-6 fixed shadow-lg">
+        <div
+            className={`fixed inset-y-0 left-0 z-20 w-60 pt-16 bg-gradient-to-r from-green-400 to-blue-500 text-white h-full p-6 shadow-lg transform transition-transform duration-300 ${
+                isOpen ? "translate-x-0" : "-translate-x-full"
+            } md:translate-x-0`}
+        >
+            <button className="text-white md:hidden mb-4" onClick={onClose}>✕ Close</button>
             <ul className="space-y-4">
                 <li>
                     <Link to="/dashboard" className="flex items-center p-2 rounded-lg hover:bg-gray-700 transition duration-200">
                         <span className="ml-2">Dashboard</span>
                     </Link>
                 </li>
-                {/* Conditionally render "Add User" and "Users" based on adminLevel value */}
                 {adminLevel === "1" && (
                     <>
                         <li>

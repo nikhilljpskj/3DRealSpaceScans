@@ -48,7 +48,7 @@ const PageAddListing7: FC<PageAddListing7Props> = () => {
                     >
                       <span>Upload a file</span>
                       <input
-                        id="file-upload"
+                        id="file-upload" 
                         name="file-upload"
                         type="file"
                         className="sr-only"
