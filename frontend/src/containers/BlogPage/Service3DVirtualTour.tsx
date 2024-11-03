@@ -2,6 +2,7 @@ import React from "react";
 import Badge from "shared/Badge/Badge";
 import NcImage from "shared/NcImage/NcImage";
 import { Helmet } from "react-helmet";
+import ServiceFooter from "components/ServiceFooter/ServiceFooter";
 
 const Service3DVirtualTour = () => {
   const renderHeader = () => {
@@ -83,6 +84,14 @@ const Service3DVirtualTour = () => {
         {renderContent()}
         <div className="max-w-screen-md mx-auto border-b border-t border-neutral-100 dark:border-neutral-700"></div>
       </div>
+      <ServiceFooter
+        bookingRoute="/booking"
+        bookingText="Book an Appointment"
+        serviceLinks={[
+          { text: "Digital Twins for Construction & Architecture", route: "/digital-twin" },
+          { text: "Virtual Staging", route: "/virtual-staging" },
+        ]}
+      />
     </div>
   );
 };

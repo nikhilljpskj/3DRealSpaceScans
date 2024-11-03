@@ -3,6 +3,7 @@ import Badge from "shared/Badge/Badge";
 import NcImage from "shared/NcImage/NcImage";
 import { Helmet } from "react-helmet";
 import BackgroundVideo from "components/BackgroundVideo";
+import ServiceFooter from "components/ServiceFooter/ServiceFooter";
 
 const ServiceVirtualStaging = () => {
   const renderHeader = () => {
@@ -73,11 +74,28 @@ const ServiceVirtualStaging = () => {
         <meta name="description" content="Enhance your property's appeal with our virtual staging service, creating stunning visuals that attract potential buyers." />
       </Helmet>
       {renderHeader()}
-      <BackgroundVideo videoSrc="/assets/services/virtual-staging.mp4" />
+      {/* <BackgroundVideo videoSrc="/assets/services/virtual-staging.mp4" /> */}
+      
+      <NcImage
+        className="w-full rounded-xl"
+        containerClassName="container my-10 sm:my-12 "
+        src="/assets/services/virtual-staging-img.jpg"
+      />
+
       <div className="nc-SingleContent container space-y-10">
         {renderContent()}
         <div className="max-w-screen-md mx-auto border-b border-t border-neutral-100 dark:border-neutral-700"></div>
       </div>
+
+      <ServiceFooter
+        bookingRoute="/booking"
+        bookingText="Book an Appointment"
+        serviceLinks={[
+          { text: "3D Virtual Tours for Real Estate", route: "/3d-virtual-tours" },
+          { text: "Digital Twins for Construction & Architecture", route: "/digital-twin" },
+        ]}
+      />
+      
     </div>
   );
 };

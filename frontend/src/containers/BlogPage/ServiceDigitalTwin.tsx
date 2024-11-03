@@ -3,6 +3,7 @@ import Badge from "shared/Badge/Badge";
 import NcImage from "shared/NcImage/NcImage";
 import { Helmet } from "react-helmet";
 import BackgroundVideo from "components/BackgroundVideo";
+import ServiceFooter from "components/ServiceFooter/ServiceFooter";
 
 
 const ServiceDigitalTwin = () => {
@@ -72,17 +73,28 @@ const ServiceDigitalTwin = () => {
         <meta name="description" content="Explore the benefits of Digital Twins in construction and architecture with real-time progress tracking, remote assessment, and virtual site walkthroughs." />
       </Helmet>
       {renderHeader()}
-      <BackgroundVideo videoSrc="/assets/services/digital-twin.mp4" />
-      {/* <NcImage
+      {/* <BackgroundVideo videoSrc="/assets/services/digital-twin.mp4" /> */}
+
+      <NcImage
         className="w-full rounded-xl"
         containerClassName="container my-10 sm:my-12"
-        src="/assets/services/services-digital-twin.jpg"
+        src="/assets/services/digital-twin-img.jpg"
         alt="Digital Twin for Construction & Architecture"
-      /> */}
+      />
       <div className="nc-SingleContent container space-y-10">
         {renderContent()}
         <div className="max-w-screen-md mx-auto border-b border-t border-neutral-100 dark:border-neutral-700"></div>
       </div>
+
+      <ServiceFooter
+        bookingRoute="/booking"
+        bookingText="Book an Appointment"
+        serviceLinks={[
+          { text: "3D Virtual Tours for Real Estate", route: "/3d-virtual-tours" },
+          { text: "Virtual Staging", route: "/virtual-staging" },
+        ]}
+      />
+
     </div>
   );
 };
