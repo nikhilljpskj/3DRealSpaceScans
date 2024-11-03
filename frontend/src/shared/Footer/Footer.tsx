@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
           <img 
             src="Logo.png" 
             alt="3DRealspace Scans" 
-            className="h-24 w-40 object-contain" // Adjusted width of the logo
+            className="w-40 object-contain" // Adjusted width of the logo
           />
         </Link>
           <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-300 text-justify">
