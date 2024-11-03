@@ -39,6 +39,7 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
         />
 
         <SectionFounder />
+        {/* In the future let's add testimonials for this page */}
         {/* <div className="relative py-16">
           <BackgroundSection />
           <SectionClientSay uniqueClassName="PageAbout_" />

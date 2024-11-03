@@ -177,7 +177,7 @@ const handleFileUpload = async () => {
 
   return (
 <div className="container mx-auto mb-24 lg:mb-32 p-5">
-  <h2 className="text-2xl font-bold mb-6">Registration Form</h2>
+  <h2 className="text-2xl font-bold mb-6">Book an appointment with us</h2>
   <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
     <div className="step-indicator text-center text-lg font-medium mb-4">
       <p>Step {step} of 5</p>
