@@ -8,6 +8,10 @@ import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import SectionHero from "./SectionHero";
 import SectionClientSay from "components/SectionClientSay/SectionClientSay";
+import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
+import {SERVICES} from 'data/services'
+import IndustryAndGeographicExpertise from "components/IndustryAndGeographicExpertise/IndustryAndGeographicExpertise";
+
 
 export interface PageAboutProps {
   className?: string;
@@ -41,6 +45,18 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
         </div> */}
 
         <SectionStatistic />
+
+         {/* Services section */}
+         <SectionSliderNewCategories
+          categories={SERVICES}
+          categoryCardType="card4"
+          itemPerRow={3}
+          heading="Our services"
+          subHeading="Discover Our 3D Services That Bring Spaces to Life"
+          uniqueClassName="PageHome2_s1"
+        />
+        
+        <IndustryAndGeographicExpertise />
       </div>
     </div>
   );

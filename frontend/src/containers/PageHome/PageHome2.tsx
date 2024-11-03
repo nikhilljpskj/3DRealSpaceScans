@@ -34,36 +34,7 @@ import IndustryAndGeographicExpertise from "components/IndustryAndGeographicExpe
 import SectionGridFeatureProperty from "./SectionGridFeatureProperty";
 import SectionDowloadApp from "./SectionDowloadApp";
 import FAQSection from "components/FAQSection/FAQSection";
-
-const DEMO_CATS_2: TaxonomyType[] = [
-  {
-    id: "1",
-    href: "/#",
-    name: "3D Virtual Tours for Real Estate",
-    desc: "Immerse buyers in lifelike property walkthroughs with interactive 3D virtual tours. Elevate engagement and accelerate sales by showcasing every detail remotely.",
-    taxonomy: "category",
-    thumbnail:
-      "/assets/services/3d-tour.jpg",
-  },
-  {
-    id: "2",
-    href: "/#",
-    name: "Digital Twins for Construction & Architecture",
-    desc: "Generate precise, scalable 3D models for construction projects, enabling real-time progress tracking, troubleshooting, and stakeholder collaboration.",
-    taxonomy: "category",
-    thumbnail:
-      "assets/services/digital-twin.jpg",
-  },
-  {
-    id: "3",
-    href: "/#",
-    name: "Virtual Staging",
-    desc: "Transform empty spaces into beautifully furnished rooms, helping prospective buyers envision their future homes.",
-    taxonomy: "category",
-    thumbnail:
-      "assets/services/virtual-staging.jpg",
-  },
-];
+import {SERVICES} from 'data/services'
 
 function PageHome2() {
   // CUSTOM THEME STYLE
@@ -137,9 +108,9 @@ function PageHome2() {
         />
 
 
-        {/* SECTION 1 */}
+        {/* Services section */}
         <SectionSliderNewCategories
-          categories={DEMO_CATS_2}
+          categories={SERVICES}
           categoryCardType="card4"
           itemPerRow={3}
           heading="Our services"

@@ -15,7 +15,7 @@ const ServiceVirtualStaging = () => {
             className="text-neutral-900 font-semibold text-3xl md:text-4xl md:!leading-[120%] lg:text-4xl dark:text-neutral-100 max-w-4xl"
             title="Virtual Staging Service"
           >
-            Virtual Staging Service
+            Virtual Staging
           </h1>
           <span className="block text-base text-neutral-500 md:text-lg dark:text-neutral-400 pb-1">
             Transform vacant spaces into beautifully furnished homes with our virtual staging solutions.
@@ -70,7 +70,7 @@ const ServiceVirtualStaging = () => {
   return (
     <div className="nc-PageSingle pt-8 lg:pt-16">
       <Helmet>
-        <title>Virtual Staging Service</title>
+        <title>Virtual Staging</title>
         <meta name="description" content="Enhance your property's appeal with our virtual staging service, creating stunning visuals that attract potential buyers." />
       </Helmet>
       {renderHeader()}
