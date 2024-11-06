@@ -177,7 +177,10 @@ const handleFileUpload = async () => {
 
   return (
 <div className="container px-4 max-w-3xl mx-auto pb-24 pt-14 sm:py-24 lg:pb-32">
-  <h2 className="text-2xl font-bold mb-6">Book an appointment with us</h2>
+  
+    <h2 className="text-2xl font-bold mb-6 text-center">Book an appointment</h2>
+  
+
   <form className="grid grid-cols-1 gap-6 bg-white p-8 rounded-xl shadow-lg max-w-lg mx-auto" onSubmit={handleSubmit}>
     <div className="step-indicator text-center text-base font-medium text-gray-500 mb-6">
       <p className="bg-gray-100 inline-block py-1 px-3 rounded-full">Step {step} of 5</p>
