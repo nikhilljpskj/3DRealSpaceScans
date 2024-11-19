@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 interface ServiceFooterProps {
   bookingRoute: string;
   bookingText: string;
-  serviceLinks: { text: string; route: string }[];
+  // serviceLinks: { text: string; route: string }[];
 }
 
 const ServiceFooter: React.FC<ServiceFooterProps> = ({
   bookingRoute,
   bookingText,
-  serviceLinks,
+  // serviceLinks,
 }) => {
   return (
     <div className="container mx-auto my-10 sm:my-12 px-5 lg:px-10">
@@ -33,7 +33,7 @@ const ServiceFooter: React.FC<ServiceFooterProps> = ({
         </div>
 
         {/* Other Services Section */}
-        <div className="flex-1 text-center md:text-left space-y-3 md:space-y-0">
+        {/* <div className="flex-1 text-center md:text-left space-y-3 md:space-y-0">
           <h4 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
             Explore Our Other Services
           </h4>
@@ -48,7 +48,7 @@ const ServiceFooter: React.FC<ServiceFooterProps> = ({
               </Link>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import MainNav1 from "./MainNav1";
 import MainNav2 from "./MainNav2";
 
 export interface HeaderProps {
-  navType?: "MainNav1" | "MainNav2";
+  navType?: "MainNav1";
   className?: string;
 }
 

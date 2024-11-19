@@ -61,6 +61,11 @@ export interface LocationStates {
   "/subscription"?: {};
   "/dashboard"?: {};
   "/booking"?: {};
+  "/industries"?: {};
+  "/scan-to-bim"?: {};
+  "/scan-to-plan"?: {};
+  "/facility-management-scanning"?: {};
+  "/large-object-scanning"?: {};
 }
 
 export type PathName = keyof LocationStates;

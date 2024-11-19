@@ -34,7 +34,8 @@ import IndustryAndGeographicExpertise from "components/IndustryAndGeographicExpe
 import SectionGridFeatureProperty from "./SectionGridFeatureProperty";
 import SectionDowloadApp from "./SectionDowloadApp";
 import FAQSection from "components/FAQSection/FAQSection";
-import {SERVICES} from 'data/services'
+import {SERVICES} from 'data/services';
+import {Helmet} from 'react-helmet';
 
 function PageHome2() {
   // CUSTOM THEME STYLE
@@ -120,6 +121,9 @@ function PageHome2() {
         
         <IndustryAndGeographicExpertise />
         <FAQSection />
+        <Helmet>
+        <title>Home</title>
+      </Helmet>
       </div>
     </div>
   );
