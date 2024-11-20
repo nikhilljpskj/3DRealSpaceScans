@@ -90,10 +90,10 @@ const ServiceVirtualStaging = () => {
       <ServiceFooter
         bookingRoute="/booking"
         bookingText="Book an Appointment"
-        serviceLinks={[
-          { text: "3D Virtual Tours for Real Estate", route: "/3d-virtual-tours" },
-          { text: "Digital Twins for Construction & Architecture", route: "/digital-twin" },
-        ]}
+        // serviceLinks={[
+        //   { text: "3D Virtual Tours for Real Estate", route: "/3d-virtual-tours" },
+        //   { text: "Digital Twins for Construction & Architecture", route: "/digital-twin" },
+        // ]}
       />
       
     </div>

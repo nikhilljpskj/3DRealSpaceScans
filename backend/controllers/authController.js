@@ -43,13 +43,25 @@ const registerUser = async (req, res) => {
 
 const createSuperUser = async () => {
   const hashedPassword = await bcrypt.hash('adminpassword', 10);
+  const email = "admin@example.com";
+
   try {
-    await createUser('admin@example.com', hashedPassword, true);
+    
+    const existingUser = await findUserByEmail(email);
+
+    if (existingUser) {
+      console.log(`Super user already exists. Login using "${email}".`);
+      return;
+    }
+
+    await createUser('Admin', email, '0000000000', hashedPassword, true);
     console.log('Super user created successfully');
   } catch (error) {
     console.error('Error creating super user:', error);
   }
 };
+
+
 
 module.exports = {
   loginUser,

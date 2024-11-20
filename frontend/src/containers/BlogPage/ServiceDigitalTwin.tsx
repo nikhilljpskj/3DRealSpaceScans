@@ -89,10 +89,10 @@ const ServiceDigitalTwin = () => {
       <ServiceFooter
         bookingRoute="/booking"
         bookingText="Book an Appointment"
-        serviceLinks={[
-          { text: "3D Virtual Tours for Real Estate", route: "/3d-virtual-tours" },
-          { text: "Virtual Staging", route: "/virtual-staging" },
-        ]}
+        // serviceLinks={[
+        //   { text: "3D Virtual Tours for Real Estate", route: "/3d-virtual-tours" },
+        //   { text: "Virtual Staging", route: "/virtual-staging" },
+        // ]}
       />
 
     </div>

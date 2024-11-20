@@ -19,13 +19,16 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
 
   return (
     <div className={`nc-MainNav1 relative z-10 ${className}`}>
-      <div className="px-4 lg:container py-4 lg:py-5 relative flex justify-between items-center">
-        <div className="flex items-center justify-between w-full md:hidden">
-          <img 
-            src="Logo.png" 
-            alt="3DRealspace Scans" 
-            className="h-14 w-auto object-contain" 
-          />
+      <div className="px-4 xl:container py-4 xl:py-5 relative flex justify-between items-center">
+        {/* Mobile navigation visible up to large screens */}
+        <div className="flex items-center justify-between w-full xl:hidden">
+          <Link to="/">
+            <img 
+              src="Logo.png" 
+              alt="3DRealspace Scans" 
+              className="h-14 w-auto object-contain" 
+            />
+          </Link>
           <button onClick={toggleMobileMenu} className="text-gray-600 dark:text-gray-300 focus:outline-none">
             {isMobileMenuOpen ? (
               // Close icon
@@ -41,19 +44,19 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
           </button>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex justify-start flex-1 items-center space-x-4 sm:space-x-10">
-        <Link to="/">
-          <img 
-            src="Logo.png" 
-            alt="3DRealspace Scans" 
-            className="h-14 w-auto object-contain" 
-          />
+        {/* Desktop Navigation for xl screens and larger */}
+        <div className="hidden xl:flex justify-start flex-1 items-center space-x-4 sm:space-x-10">
+          <Link to="/">
+            <img 
+              src="Logo.png" 
+              alt="3DRealspace Scans" 
+              className="h-14 w-auto object-contain" 
+            />
           </Link>
           <Navigation />
         </div>
 
-        <div className="hidden md:flex flex-shrink-0 items-center justify-end flex-1 lg:flex-none text-neutral-700 dark:text-neutral-100">
+        <div className="hidden xl:flex flex-shrink-0 items-center justify-end flex-1 xl:flex-none text-neutral-700 dark:text-neutral-100">
           <div className="hidden xl:flex items-center space-x-0.5">
             <div className="px-1" />
             <ButtonPrimary href="/booking">Book an appointment</ButtonPrimary>
@@ -65,8 +68,9 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
         </div>
       </div>
 
+      {/* Mobile Menu visible up to large screens */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+        <div className="xl:hidden bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
           <ul className="flex flex-col space-y-3">
             {NAVIGATION_DEMO.map((item) => (
               <li key={item.id} className="relative group">
@@ -109,7 +113,7 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
             ))}
           </ul>
           <div className="flex justify-center mt-6">
-            <ButtonPrimary href="/booking" className="w-full md:w-auto">
+            <ButtonPrimary href="/booking" className="w-full xl:w-auto">
               Book an appointment
             </ButtonPrimary>
           </div>

@@ -87,10 +87,10 @@ const Service3DVirtualTour = () => {
       <ServiceFooter
         bookingRoute="/booking"
         bookingText="Book an Appointment"
-        serviceLinks={[
-          { text: "Digital Twins for Construction & Architecture", route: "/digital-twin" },
-          { text: "Virtual Staging", route: "/virtual-staging" },
-        ]}
+        // serviceLinks={[
+        //   { text: "Digital Twins for Construction & Architecture", route: "/digital-twin" },
+        //   { text: "Virtual Staging", route: "/virtual-staging" },
+        // ]}
       />
     </div>
   );

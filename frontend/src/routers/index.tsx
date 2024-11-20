@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Page } from "./types";
 import ScrollToTop from "./ScrollToTop";
 import Footer from "shared/Footer/Footer";
-import PageHome from "containers/PageHome/PageHome";
 import Page404 from "containers/Page404/Page404";
 import ListingStayPage from "containers/ListingStayPage/ListingStayPage";
 import ListingStayMapPage from "containers/ListingStayPage/ListingStayMapPage";
@@ -42,13 +41,9 @@ import PageHome2 from "containers/PageHome/PageHome2";
 import ListingRealEstateMapPage from "containers/ListingRealEstatePage/ListingRealEstateMapPage";
 import ListingRealEstatePage from "containers/ListingRealEstatePage/ListingRealEstatePage";
 import ListingFlightsPage from "containers/ListingFlightsPage/ListingFlightsPage";
-// import FooterNav from "components/FooterNav";
 import useWindowSize from "hooks/useWindowResize";
-import PageHome3 from "containers/PageHome/PageHome3";
 import AdminDashboard from "containers/AdminDashboard/AdminDashboard";
 import BookingPage from "containers/BookingPage/BookingForm";
-// import LeftNavbar from "containers/AdminNavbar/LeftNavbar";
-// import TopNavbar from "containers/AdminNavbar/TopNavbar";
 import ViewBooking from "containers/ViewBooking/ViewBooking";
 import BookingDetails from "containers/BookingDetails/BookingDetails";
 import Header from "components/Header/Header";
@@ -56,6 +51,11 @@ import UsersList from "containers/UserList/UsersList";
 import Service3DVirtualTour from 'containers/BlogPage/Service3DVirtualTour';
 import ServiceDigitalTwin from 'containers/BlogPage/ServiceDigitalTwin';
 import ServiceVirtualStaging  from 'containers/BlogPage/ServiceVirtualStaging'
+import ScanToBim from "containers/BlogPage/ServiceScanToBim";
+import ScanToPlan from "containers/BlogPage/ServiceScanToPlan";
+import IndustriesWeServe from "containers/BlogPage/Industries";
+import FacilityManagementPage from "containers/BlogPage/FacilityManagementPage";
+import ServiceLargeObject3DScanning from "containers/BlogPage/ServiceLargeObject3DScanning";
 
 export const pages: Page[] = [
   { path: "/", exact: true, component: PageHome2 },
@@ -102,6 +102,15 @@ export const pages: Page[] = [
   { path: "/3d-virtual-tours", component: Service3DVirtualTour },
   { path: "/digital-twin", component: ServiceDigitalTwin },
   { path: "/virtual-staging", component: ServiceVirtualStaging },
+  { path: "/scan-to-bim", component: ScanToBim },
+  { path: "/scan-to-plan", component: ScanToPlan },
+  { path: "/facility-management-scanning", component: FacilityManagementPage },
+  { path: "/large-object-scanning", component: ServiceLargeObject3DScanning },
+
+
+  { path: "/industries", component: IndustriesWeServe },
+  
+  
   //
   { path: "/add-listing-1", component: PageAddListing1 },
   { path: "/add-listing-2", component: PageAddListing2 },

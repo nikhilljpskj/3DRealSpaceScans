@@ -20,6 +20,30 @@ const demoChildMenus: NavItemType[] = [
     name: "Virtual Staging",
     isNew: false,
   },
+  {
+    id: ncNanoId(),
+    href: "/scan-to-bim",
+    name: "Scan to BIM",
+    isNew: false,
+  },
+  {
+    id: ncNanoId(),
+    href: "/scan-to-plan",
+    name: "Scan to Plan",
+    isNew: false,
+  },
+  {
+    id: ncNanoId(),
+    href: "/facility-management-scanning",
+    name: "Facility Management Scanning",
+    isNew: false,
+  },
+  {
+    id: ncNanoId(),
+    href: "/large-object-scanning",
+    name: "Large Object Scanning",
+    isNew: false,
+  },
 ];
 
 const companyChildElements: NavItemType[] = [
@@ -52,17 +76,23 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     href: "/",
     name: "Home",
     type: "none",
-    isNew: true,
+    isNew: false,
   },
   {
     id: ncNanoId(),
-    href: "",
+    href: "/3d-virtual-tours",
     name: "Our services",
     type: "dropdown",
     children: demoChildMenus,
     isNew: true,
   },
-
+  {
+    id: ncNanoId(),
+    href: "/industries",
+    name: "Industries",
+    type: "none",
+    isNew: false,
+  },
   {
     id: ncNanoId(),
     href: "/about",
