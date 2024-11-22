@@ -16,7 +16,7 @@ const ScanToBIMPage: React.FC = () => {
       <NcImage
         className="w-full rounded-xl"
         containerClassName="container my-10 sm:my-12"
-        src="/assets/services/scan-to-bim-placeholder.jpg" // Replace with your image path
+        src="/assets/services/BIM.jpg" // Replace with your image path
         alt="Scan to BIM process illustration"
       />
 
