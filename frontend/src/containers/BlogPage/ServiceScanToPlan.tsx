@@ -1,5 +1,6 @@
 import React from 'react';
 import NcImage from "shared/NcImage/NcImage"; // Import the NcImage component
+import { Link } from 'react-router-dom';
 
 const ScanToPlanPage: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const ScanToPlanPage: React.FC = () => {
       <NcImage
         className="w-full rounded-xl"
         containerClassName="container my-10 sm:my-12"
-        src="/assets/services/scan-to-plan-placeholder.jpg" // Replace with your image path
+        src="/assets/services/STP.jpg" // Replace with your image path
         alt="Scan to Plan Service"
       />
 
@@ -41,7 +42,7 @@ const ScanToPlanPage: React.FC = () => {
         <NcImage
           className="w-full rounded-xl"
           containerClassName="lg:w-1/2"
-          src="/assets/services/process-placeholder.jpg" // Replace with your image path
+          src="/assets/services/STP2.jpg" // Replace with your image path
           alt="Scan to Plan Process"
         />
       </section>
@@ -94,7 +95,7 @@ const ScanToPlanPage: React.FC = () => {
         <NcImage
           className="w-full rounded-xl"
           containerClassName="lg:w-1/2"
-          src="/assets/services/buildings-placeholder.jpg" // Replace with your image path
+          src="/assets/services/STP1.jpg" // Replace with your image path
           alt="Scan-to-Plan Applications"
         />
         <div className="lg:w-1/2 space-y-4">
@@ -111,9 +112,11 @@ const ScanToPlanPage: React.FC = () => {
         <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-300">
           Contact us to learn how our Scan-to-Plan service can revolutionize your project with accurate and efficient CAD drawings.
         </p>
-        <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">
-          Get a Free Quote
-        </button>
+        <div className="mt-6">
+          <Link to="/booking" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">
+            Get a Free Quote
+          </Link>
+        </div>
       </section>
     </div>
   );

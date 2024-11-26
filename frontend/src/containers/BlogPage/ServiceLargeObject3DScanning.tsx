@@ -16,7 +16,7 @@ const LargeObject3DScanningPage: React.FC = () => {
       <NcImage
         className="w-full rounded-xl"
         containerClassName="container my-10 sm:my-12"
-        src="/assets/services/large-object-scanning.jpg" // Replace with your image path
+        src="/assets/services/LO3D.jpg" // Replace with your image path
         alt="Large Object 3D Scanning"
       />
 
@@ -40,7 +40,7 @@ const LargeObject3DScanningPage: React.FC = () => {
         <div className="lg:w-1/3 mt-6 lg:mt-0">
           <NcImage
             className="w-full rounded-xl object-cover"
-            src="/assets/images/benefits-scanning.jpg" // Replace with your image path
+            src="/assets/services/LO3D1.jpg" // Replace with your image path
             alt="3D Scanning Benefits"
           />
         </div>
@@ -50,7 +50,7 @@ const LargeObject3DScanningPage: React.FC = () => {
         <div className="lg:w-1/3 mt-6 lg:mt-0">
           <NcImage
             className="w-full rounded-xl object-cover"
-            src="/assets/images/benefits-scanning.jpg" // Replace with your image path
+            src="/assets/services/LO3D3.jpg" // Replace with your image path
             alt="3D Scanning Benefits"
           />
         </div>
@@ -68,7 +68,7 @@ const LargeObject3DScanningPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <NcImage
               className="w-32 h-32 rounded-lg object-cover"
-              src="/assets/images/aircraft.jpg" // Replace with your image path
+              src="/assets/services/AIRCRAFT.jpg" // Replace with your image path
               alt="Entire Aircraft"
             />
             <p className="text-base text-neutral-700 dark:text-neutral-300 mt-2">Entire Aircraft</p>
@@ -76,7 +76,7 @@ const LargeObject3DScanningPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <NcImage
               className="w-32 h-32 rounded-lg object-cover"
-              src="/assets/images/trees.jpg" // Replace with your image path
+              src="/assets/services/TREE.jpg" // Replace with your image path
               alt="Trees"
             />
             <p className="text-base text-neutral-700 dark:text-neutral-300 mt-2">Trees</p>
@@ -84,7 +84,7 @@ const LargeObject3DScanningPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <NcImage
               className="w-32 h-32 rounded-lg object-cover"
-              src="/assets/images/wind-turbine.jpg" // Replace with your image path
+              src="/assets/services/WIND.jpg" // Replace with your image path
               alt="Wind Turbines"
             />
             <p className="text-base text-neutral-700 dark:text-neutral-300 mt-2">Wind Turbines</p>
@@ -92,7 +92,7 @@ const LargeObject3DScanningPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <NcImage
               className="w-32 h-32 rounded-lg object-cover"
-              src="/assets/images/cars-trucks.jpg" // Replace with your image path
+              src="/assets/services/CARS.jpg" // Replace with your image path
               alt="Cars and Trucks"
             />
             <p className="text-base text-neutral-700 dark:text-neutral-300 mt-2">Cars and Trucks</p>
@@ -100,7 +100,7 @@ const LargeObject3DScanningPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <NcImage
               className="w-32 h-32 rounded-lg object-cover"
-              src="/assets/images/helicopter.jpg" // Replace with your image path
+              src="/assets/services/Helicopters.jpg" // Replace with your image path
               alt="Helicopters"
             />
             <p className="text-base text-neutral-700 dark:text-neutral-300 mt-2">Helicopters</p>
@@ -108,7 +108,7 @@ const LargeObject3DScanningPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <NcImage
               className="w-32 h-32 rounded-lg object-cover"
-              src="/assets/images/boat-hull.jpg" // Replace with your image path
+              src="/assets/services/boat-hull.jpg" // Replace with your image path
               alt="Boat Hulls"
             />
             <p className="text-base text-neutral-700 dark:text-neutral-300 mt-2">Boat Hulls</p>
@@ -116,7 +116,7 @@ const LargeObject3DScanningPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <NcImage
               className="w-32 h-32 rounded-lg object-cover"
-              src="/assets/images/tanks-vessels.jpg" // Replace with your image path
+              src="/assets/services/tanks-vessels.jpg" // Replace with your image path
               alt="Tanks & Vessels"
             />
             <p className="text-base text-neutral-700 dark:text-neutral-300 mt-2">Tanks & Vessels</p>
@@ -124,7 +124,7 @@ const LargeObject3DScanningPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <NcImage
               className="w-32 h-32 rounded-lg object-cover"
-              src="/assets/images/staircase.jpg" // Replace with your image path
+              src="/assets/services/staircase.jpg" // Replace with your image path
               alt="Staircases"
             />
             <p className="text-base text-neutral-700 dark:text-neutral-300 mt-2">Staircases</p>
@@ -132,7 +132,7 @@ const LargeObject3DScanningPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <NcImage
               className="w-32 h-32 rounded-lg object-cover"
-              src="/assets/images/statue.jpg" // Replace with your image path
+              src="/assets/services/LO3D2.jpg" // Replace with your image path
               alt="Statues"
             />
             <p className="text-base text-neutral-700 dark:text-neutral-300 mt-2">Statues</p>
@@ -167,7 +167,7 @@ const LargeObject3DScanningPage: React.FC = () => {
         <div className="lg:w-1/3 mt-6 lg:mt-0">
           <NcImage
             className="w-full rounded-xl object-cover"
-            src="/assets/images/benefits-scanning.jpg" // Replace with your image path
+            src="/assets/services/LO3D4.jpg" // Replace with your image path
             alt="3D Scanning Benefits"
           />
         </div>

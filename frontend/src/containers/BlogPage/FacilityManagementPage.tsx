@@ -1,5 +1,7 @@
 import React from "react";
-import NcImage from "shared/NcImage/NcImage"; // Import the NcImage component
+import NcImage from "shared/NcImage/NcImage"; 
+
+import { Link } from 'react-router-dom';
 
 const FacilityManagementPage: React.FC = () => {
   return (
@@ -18,7 +20,7 @@ const FacilityManagementPage: React.FC = () => {
       <NcImage
         className="w-full rounded-lg shadow-md"
         containerClassName="container mx-auto my-10"
-        src="/assets/services/facility-management-hero.jpg"
+        src="/assets/services/FM3D.jpg"
         alt="Facility Management 3D Laser Scanning Hero"
       />
 
@@ -41,7 +43,7 @@ const FacilityManagementPage: React.FC = () => {
         </div>
         <NcImage
           className="rounded-lg shadow-md"
-          src="/assets/services/efficiency.jpg"
+          src="/assets/services/FM3D3.jpg"
           alt="Operational Efficiency with 3D Scanning"
         />
       </section>
@@ -74,7 +76,7 @@ const FacilityManagementPage: React.FC = () => {
           </div>
           <NcImage
             className="rounded-lg shadow-md"
-            src="/assets/services/why-choose-us.jpg"
+            src="/assets/services/FM3D2.jpg"
             alt="Why Choose Us for Facility Scanning"
           />
         </div>
@@ -104,7 +106,7 @@ const FacilityManagementPage: React.FC = () => {
           </div>
           <NcImage
             className="rounded-lg shadow-md"
-            src="/assets/services/bim-benefits.jpg"
+            src="/assets/services/FM3D1.jpg"
             alt="BIM Benefits for Facility Management"
           />
         </div>
@@ -133,7 +135,7 @@ const FacilityManagementPage: React.FC = () => {
           </div>
           <NcImage
             className="rounded-lg shadow-md"
-            src="/assets/services/digital-twins.jpg"
+            src="/assets/services/FM3D4.jpg"
             alt="Digital Twins for Facility Management"
           />
         </div>
@@ -148,9 +150,11 @@ const FacilityManagementPage: React.FC = () => {
           Contact us today for a consultation and experience the accuracy and
           efficiency of 3D laser scanning for your project.
         </p>
-        <button className="px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-lg shadow-md hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition">
-          Get Started Now
-        </button>
+        <div className="mt-6">
+          <Link to="/booking" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">
+            Get a Free Quote
+          </Link>
+        </div>
       </section>
     </div>
   );

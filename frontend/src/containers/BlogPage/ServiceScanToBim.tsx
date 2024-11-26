@@ -1,5 +1,6 @@
 import React from "react";
 import NcImage from "shared/NcImage/NcImage"; // Import the NcImage component
+import { Link } from 'react-router-dom';
 
 const ScanToBIMPage: React.FC = () => {
   return (
@@ -33,7 +34,7 @@ const ScanToBIMPage: React.FC = () => {
         <div>
           <NcImage
             className="rounded-lg"
-            src="/assets/services/intro-scan-to-bim.jpg"
+            src="/assets/services/BIM1.jpg"
             alt="What is Scan to BIM"
           />
         </div>
@@ -50,7 +51,7 @@ const ScanToBIMPage: React.FC = () => {
           </p>
           <NcImage
             className="rounded-lg"
-            src="/assets/services/how-it-works.jpg"
+            src="/assets/services/BIM2.jpg"
             alt="How it works"
           />
         </div>
@@ -67,7 +68,7 @@ const ScanToBIMPage: React.FC = () => {
         <div>
           <NcImage
             className="rounded-lg"
-            src="/assets/services/applications.jpg"
+            src="/assets/services/BIM3.jpg"
             alt="Applications of Scan to BIM"
           />
         </div>
@@ -128,7 +129,7 @@ const ScanToBIMPage: React.FC = () => {
         <div>
           <NcImage
             className="rounded-lg"
-            src="/assets/services/sustainability.jpg"
+            src="/assets/services/BIM4.jpg"
             alt="Sustainability in Scan to BIM"
           />
         </div>
@@ -142,9 +143,11 @@ const ScanToBIMPage: React.FC = () => {
         <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-300">
           Contact us today to learn how our Scan to BIM services can save time, improve accuracy, and streamline your workflows.
         </p>
-        <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">
-          Get a Free Quote
-        </button>
+        <div className="mt-6">
+          <Link to="/booking" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">
+            Get a Free Quote
+          </Link>
+        </div>
       </section>
     </div>
   );
