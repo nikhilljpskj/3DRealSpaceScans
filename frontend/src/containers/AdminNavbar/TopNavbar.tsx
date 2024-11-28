@@ -100,7 +100,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ sidebarOpen, setSidebarOpen }) =>
 
                 <div className="relative">
                     <button
-                        className="flex items-center space-x-2 hover:bg-blue-700 px-4 py-2 rounded-lg focus:outline-none"
+                        className="flex items-center space-x-2 px-4 py-2 rounded-lg focus:outline-none"
                         onClick={() => setDropdownOpen(!dropdownOpen)}
                     >
                         <span className="truncate">{email}</span>
